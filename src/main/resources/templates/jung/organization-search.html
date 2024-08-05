@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기관검색</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/jung/organization-search.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="organization-search-header">
+        <h1>봉사기관 정보</h1>
+        <hr />
+      </header>
+      <section class="search-section">
+        <form class="organization-form">
+          <div class="form-firstline">
+            <div class="form-group">
+              <label>지역선택</label>
+              <select class="select-dropdown">
+                <option value="">전체</option>
+                <option value="">경기</option>
+                <option value="">강원도</option>
+                <option value="">충청</option>
+                <option value="">전북</option>
+                <option value="">전남</option>
+                <option value="">경남</option>
+                <option value="">경북</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>시설유형</label>
+              <select class="select-dropdown">
+                <option value="">전체</option>
+                <option value="">행정</option>
+                <option value="">공공</option>
+                <option value="">민간</option>
+                <option value="">문화</option>
+                <option value="">기업</option>
+                <option value="">기타</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="organization-name">기관명</label>
+            <input type="text" class="organization-name-input" name="organization-name" />
+          </div>
+          <div class="form-buttons">
+            <button type="submit" class="search-btn">검색</button>
+            <button type="reset" class="reset-btn">초기화</button>
+          </div>
+        </form>
+      </section>
+      <section class="list-section">
+        <div class="list-header">
+          <h2><img src="https://www.1365.go.kr/web/vols/images/ico/ico_tit_lv2.png"/>목록보기</h2>
+          <select class="order-select">
+            <option>평점순</option>
+            <option>리뷰순</option>
+            <option>가입일순</option>
+          </select>
+        </div>
+        <hr />
+        <div class="list-wrap">
+          <ul class="list">
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">(사) 자원순환사회연대 <span>★4.3</span></div>
+                <div class="list-element-content">
+                  <span><b>[시설유형] </b>민간기관</span>
+                  <span><b>[전화번호] </b>02-744-5305</span>
+                  <span><b>[주소] </b>서울특별시 종로구 새무안로5가길 28 1217호</span>
+                  <span><b>[리뷰수] </b>53</span>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+      </section>
+    </div>
+  </body>
+</html>

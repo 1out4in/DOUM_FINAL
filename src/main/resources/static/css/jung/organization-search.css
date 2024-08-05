@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background-color: #f9f9f9;
+}
+
+ul {
+  padding-left: 10px;
+  margin-left: 0;
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Optionally set text color to inherit */
+}
+
+a:hover {
+  text-decoration: none; /* Add underline on hover (optional) */
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: -0.06em;
+}
+
+h2 {
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.025em;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 5px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.organization-form {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-firstline {
+  display: flex;
+  flex-direction: row;
+  gap: 0px 110px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  min-width: 80px;
+  margin-right: 10px;
+}
+.select-dropdown {
+  width: 300px;
+  height: 30px;
+}
+
+.organization-name-input {
+  width: 800px;
+  height: 30px;
+}
+
+.form-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
+.search-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 1px;
+  margin-right: 10px;
+}
+
+.reset-btn {
+  background-color: #7f8c8d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 1px;
+}
+
+.search-btn:hover {
+  background-color: #c0392b;
+}
+
+.reset-btn:hover {
+  background-color: #95a5a6;
+}
+
+.list {
+  list-style: none;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-select {
+  margin-top: 5px;
+  width: 200px;
+  height: 27px;
+}
+
+.list-element {
+  min-height: 80px;
+  border-bottom: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.list-element-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.list-element-content span {
+  font-size: 12px;
+  margin-right: 4px;
+}

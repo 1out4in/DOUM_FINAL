@@ -1,0 +1,341 @@
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1225px;
+    min-width: 1000px;
+}
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+#contents{
+    width: 1000px;
+    min-height: 1000px;
+    margin: 0 auto;
+}
+
+.content{
+    position: relative;
+    float: right;
+    width: 1000px;
+    padding: 60px 0 60px 40px;
+}
+
+/* 봉사글 등록하는 기관 이름 */
+.content_header{
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.content_header h2{
+    padding-bottom: 17px;
+    border-bottom: 1px solid #ccc;
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: -0.060em;
+}
+
+.top_title{
+    margin: 0;
+    line-height: 100%;
+}
+
+.content_view{
+    position: relative;
+}
+
+.top_title_header{
+    position: relative;
+    padding: 10px 20px 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.025em;
+}
+
+.board_view .type2{
+    margin-top: 0;
+    padding: 0;
+    border-top: 2px solid #333;
+}
+
+.board_data.type2 .group {
+    /* padding: 8px 0; */
+    overflow: hidden;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.board_data.type2 .group dl{
+    width: 110%;
+}
+
+.board_data.type2 .group dl dt {
+    width: 115px;
+    padding: 8px 0;
+    line-height: 22px;
+    top: 0;
+    left: 0;
+    /* margin-left: -1px; */
+    border-right: 1px solid #ccc;
+    background: #eee;
+    color: #333;
+    text-align: center;
+}
+
+
+.board_data.type2 .group dl:last-child dd {
+    border-right: 0;
+}
+.board_data.type2 .group.group_dl1 dl dd {
+    width: 80%;
+}
+
+.board_data.type2 .group dl dd {
+    position: relative;
+    float: left;
+    width: 280px;
+    margin-left: -1px;
+    padding: 8px 10px;
+    /* padding-right: 0; */
+    font-weight: normal;
+    line-height: 22px;
+    color: #666;
+    min-height: 22px;
+    /* border-left: 1px solid #ccc; */
+    /* border-right: 1px solid #ccc; */
+}
+
+
+
+/* ------------------------------------------- */
+dl {
+    width: 50%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-size: 17px;
+}
+dt {
+    float: left;
+    width: 30%;
+    font-weight: bold;
+    clear: both;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+}
+dd {
+    padding: 6px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.gen{
+    height: 28px;
+}
+
+.location{
+    height: 29px;
+    text-align: center;
+}
+
+.cell_phone{
+    height: 29px;
+}
+.phone{
+    height: 29px;
+}
+.Email{
+    height: 29px;
+
+}
+.Agree_receive{
+    height: 29px;
+    border-bottom: 0;
+}
+.Email_receive{
+    height: 27px;
+    border-top: 0;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    background-color: #666666;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+}
+.input-field {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.full-width {
+    width: calc(100% - 20px);
+}
+.short-width {
+    width: calc(25% - 20px);
+}
+.medium-width {
+    width: calc(50% - 12px);
+}
+.select-field {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.inline {
+    display: inline-block;
+}
+.margin-left {
+    margin-left: 10px;
+}
+.margin-left1 {
+    margin-left: 0px;
+}
+.margin-top {
+    width: 250px;
+    margin-top: 0px;
+}
+.radio-group, .checkbox-group {
+    margin-top: 5px;
+}
+.email-container {
+    display: flex;
+    align-items: center;
+}
+.email-input {
+    width: calc(29% - 12px);
+}
+.email-at {
+    margin: 0 5px;
+}
+.email-select {
+    width: calc(20% - 12px);
+}
+.email-checkbox {
+    margin-left: 10px;
+}
+
+
+p.info{
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 0 0 5px 30px;
+    background: url(https://www.1365.go.kr/web/vols/images/ico/ico_caution.png) no-repeat left 1px;
+}
+
+
+.button-container {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.btn.save{
+    background-color: #f57c00; /* Orange color */
+    padding: 0 32px;
+    height: 40px;
+}
+
+.btn.cancel {
+    background-color: #757575; /* Gray color */
+    padding: 0 32px;
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 기본 리스트들 css값 */
+
+ul, ol, dl {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    list-style: none;
+}
+
+dt, dd, li {
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+}
+
+h3{
+    margin: 0;
+}

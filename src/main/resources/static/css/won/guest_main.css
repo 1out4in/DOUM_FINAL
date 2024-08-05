@@ -1,0 +1,445 @@
+#img-1{
+    width: 100%;
+    height:501px ;
+}
+/* test */
+
+.outer {
+  position: relative;
+
+}
+
+.button-list {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px; /* Adjust padding as needed */
+}
+
+
+.button-list .button-left,
+.button-list .button-right {
+  background-color:#ffffff;
+  border-radius: 70px;
+  color: black; 
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+}
+
+
+/* 배너css */
+
+.outer {
+    
+    width: 100%;
+    height:501px ;
+    margin: 0 auto;
+
+  }
+  
+  .inner-list {
+    display: flex;
+    transition: .3s ease-out;
+    height: 100%;
+  }
+  
+  .inner {
+   
+    padding: 0 16px;
+  }
+  
+  .button-list {
+    text-align: center;
+  }
+
+  /* 확인용 */
+  .page_go_wrap{
+    /* background-color: blue; */
+    padding-left: 150px; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+
+  .container {
+    /* 확인용 */
+    /* background-color: bisque; */
+
+
+    position: relative;
+    width: 1024px;
+    margin: 0 auto;
+}
+
+ul{
+    /* display: flex; */
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    list-style: none;
+}
+
+#bell{
+  font-size: 30px;
+}
+#login{
+  margin-right: 1px;
+}
+
+.list{
+  text-align: center;
+}
+
+/* 아이콘 */
+
+.page_go_wrap ul li.go1 {
+    background: url(img/화면\ 캡처\ 2024-07-02\ 142844.png) top center no-repeat;
+}
+.page_go_wrap ul li.go2 {
+    background: url(img/화면\ 캡처\ 2024-07-02\ 143620.png) top center no-repeat;
+}
+.page_go_wrap ul li.go3 {
+    background: url(img/화면\ 캡처\ 2024-07-02\ 143653.png) top center no-repeat;
+}
+.page_go_wrap ul li.go4 {
+    background: url(img/화면\ 캡처\ 2024-07-02\ 143709.png) top center no-repeat;
+}
+.page_go_wrap ul li.go5 {
+    background: url(img/화면\ 캡처\ 2024-07-02\ 143728.png) top center no-repeat;
+}
+.page_go_wrap ul li.go6 {
+    background: url(img/화면\ 캡처\ 2024-07-02\ 143738.png) top center no-repeat;
+}
+
+
+
+.page_go_wrap ul li {
+    display: inline-block;
+    /* float: left; */
+    width: 16.66%;
+}
+ li {
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+}
+
+.menu > span > a{
+  text-decoration: none;
+}
+
+
+
+
+
+.menu{
+  background: linear-gradient(to right, rgba(249, 138, 12, 0.8) 0%, rgba(243, 99, 0, 0.8) 100%);
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+.page_go_wrap ul li a {
+    display: block;
+    padding-top: 100px;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: -0.025em;
+}
+
+
+
+/* 모집중인 자원봉사 */
+.bongsalist {
+  height: 365px;
+  padding: 40 0px;
+ 
+    background: #5e584a;
+}
+
+.bongsa-1{
+  width: 230px;
+  height: 240px;
+  border-radius: 7px;
+ background-color: #fff;
+ margin-right: 20px;
+
+}
+
+.bongsalist-1{
+  padding: 0 300px;
+  margin-top: 30px;
+  
+}
+
+.font{
+  font-size: 11px;
+  color: #666;
+}
+.mainfont{
+  color: #789e20;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top:10px;
+}
+
+.text{
+  font-size: 14px;
+  color: #555353;
+  font-weight: bold;
+}
+.mozip{
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  padding-top:20px;
+}
+
+
+.bar{
+  background-color: #789e20;
+  height: 15px;
+  border-top-left-radius: 7px;
+  border-top-right-radius:7px ;
+  width: 100%;
+}
+
+.a1{
+ 
+  color: #000;
+  font-size: 11px;
+  text-align: right;
+}
+
+.bongsa_plus{
+  text-align: right;
+  
+}
+
+
+.items-1{
+  width: 100%;
+  height: 18px;
+  background: #789e20;
+}
+
+ .go2 ul li a {
+  text-decoration: none;
+  color: #666;
+  
+}
+.go3 >a {
+  text-decoration: none;
+  color: #666;
+}
+
+.go4 >a {
+  text-decoration: none;
+  color: #666;
+}
+
+.go5 >a {
+  text-decoration: none;
+  color: #666;
+}
+
+.go6 >a {
+  text-decoration: none;
+  color: #666;
+}
+
+
+
+/* 더보기 */
+ .more {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    padding-left: 15px;
+    color: #fff;
+}
+a {
+    text-decoration: none;}
+
+  
+
+    /* board */
+    .board{
+      width: 100%;
+      height: 280px;
+      padding: 40px 0;
+     
+      background-color:#eeebe4;
+    }
+
+    .board > div{
+      /* padding-left: 650px; */
+        display: flex;
+    }
+
+    .board-items1{
+    
+      width: 354px;
+      height: 205px;
+      margin-right: 40px;
+      /* display: flex; */
+      
+    }
+    .board-items1 > div{
+      font-size: 28px;
+    }
+.span{
+  margin-left: 190px;
+  font-size: 14px;
+}
+ 
+   .plus1{
+    margin-left: 110px;
+    font-size: 14px;
+   }
+
+   .p{
+    color: #333;
+    font-size: 28px;
+   }
+
+.div > a{
+  display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    color: #666;
+}
+
+
+
+
+
+   .board-items2{
+      
+      width: 354px;
+      height: 205px;
+    
+    }
+   
+    .board-items2 > a{
+      display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    color: #666;
+    }
+
+
+    .line{
+      border-left: 1px solid #d6d0d0;
+      margin-right:100px;
+    }
+   
+
+  /* 하단 베너*/
+  .banner > img{
+    width: 500px;
+    height: 272px;
+
+  }
+
+
+  .banner{
+    padding: 50px;
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    margin-left: 60px;
+  }
+
+ 
+  /* 하단 배너 */
+
+  .outer-1 {
+    border: 6px solid royalblue;
+    width: 500px;
+    height: 272px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+  
+  .inner-list-1 {
+    display: flex;
+    transition: .3s ease-out;
+    height: 100%;
+  }
+  
+  .inner-1 {
+    border: 6px solid olive;
+    padding: 0 16px;
+  }
+  
+  .button-list-1 {
+    text-align: center;
+  }
+
+  /* 온도계 */
+  .thermometer{
+    /* 확인용 */
+    /* background-color: chartreuse; */
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    width: 500px;
+    height: 272px;
+    
+    margin-left: 50px;
+    display: flex;
+
+  }
+
+/* .thermometer >div{
+  display: flex;
+} */
+
+.thermometer >  th{
+  color: #f36200;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+
+.thermometer > div > img{
+ padding: 0px;
+ margin-top: 50px;
+}
+
+table {
+  width: 100%;
+}
+
+.th-left {
+  text-align: left;
+}
+
+.th-right {
+  text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>봉사내역</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/jung/applied-volunteer.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="volunteer-search-header">
+        <h1>봉사내역</h1>
+        <hr />
+      </header>
+      <section class="summary-section">
+        <div class="summary-element">
+          <div class="summary-circle">
+            <div class="summary-number">22</div>
+          </div>
+          <div class="summary-text">신청한 봉사</div>
+        </div>
+        <div class="summary-element">
+          <div class="summary-circle">
+            <div class="summary-number">21</div>
+          </div>
+          <div class="summary-text">승인된 봉사</div>
+        </div>
+        <div class="summary-element">
+          <div class="summary-circle">
+            <div class="summary-number">13</div>
+          </div>
+          <div class="summary-text">완료한 봉사</div>
+        </div>
+        <div class="summary-element">
+          <div class="summary-circle">
+            <div class="summary-number">7</div>
+          </div>
+          <div class="summary-text">거절된 봉사</div>
+        </div>
+      </section>
+      <hr />
+      <div class="buttons">
+        <button>신청한 봉사</button>
+        <button>승인된 봉사</button>
+        <button>완료한 봉사</button>
+        <button>거절된 봉사</button>
+      </div>
+
+      <!-- 봉사리스트 -->
+      <section class="list-section">
+        <div class="list-header">
+          <h2><img src="https://www.1365.go.kr/web/vols/images/ico/ico_tit_lv2.png" />목록보기</h2>
+        </div>
+        <hr />
+        <div class="list-wrap">
+          <ul class="list">
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-left">
+                  <div class="list-element-header">[신청한 봉사]</div>
+                  <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                  <div class="list-element-content">
+                    <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                    <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                    <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                    <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                    <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                  </div>
+                </div>
+                <button class="list-element-right">
+                  <div>신청</div>
+                  <div>취소</div>
+                </button>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-left">
+                  <div class="list-element-header">[승인된 봉사]</div>
+                  <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                  <div class="list-element-content">
+                    <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                    <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                    <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                    <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                    <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                  </div>
+                </div>
+                <button class="list-element-right">
+                  <div>신청</div>
+                  <div>취소</div>
+                </button>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-left">
+                  <div class="list-element-header">[완료한 봉사]</div>
+                  <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                  <div class="list-element-content">
+                    <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                    <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                    <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                    <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                    <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                  </div>
+                </div>
+                <button class="list-element-right">
+                  <div>리뷰</div>
+                  <div>작성</div>
+                </button>
+              </a>
+            </li>
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-left">
+                  <div class="list-element-header">[거절된 봉사]</div>
+                  <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                  <div class="list-element-content">
+                    <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                    <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                    <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                    <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                    <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

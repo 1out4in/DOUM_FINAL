@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.doum.mapper.won.ReviewMapper">
+
+    <insert id="insertReview">
+        insert into tbl_organization_review
+        values (seq_organization_review.nextval, #{organizationId}, #{userId}, #{content}, #{rating})
+    </insert>
+
+
+</mapper>

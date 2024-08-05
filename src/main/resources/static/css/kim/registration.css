@@ -1,0 +1,351 @@
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1225px;
+    min-width: 1000px;
+}
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 15px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+#contents{
+    width: 1100px;
+    min-height: 1080px;
+    margin: 0 auto;
+}
+
+.content{
+    position: relative;
+    float: right;
+    width: 1000px;
+    padding: 60px 0 60px 40px;
+}
+
+/* 각 페이지 이름*/
+.content_header{
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.content_header h2{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: -0.060em;
+}
+
+.top_title{
+    margin: 0;
+    line-height: 100%;
+    padding-bottom: 5px;
+}
+
+.content_view{
+    position: relative;
+}
+
+/* ---------------------------------- */
+
+/* 소 제목 공간 */
+.top_title_header{
+    position: relative;
+    padding: 18px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.025em;
+    margin-top: 0;
+    border: 1px solid #ccc;
+}
+
+/* ---------------------------------- */
+
+/* 소 제목 공간에 들어갈 텍스트 공간 */
+.top_title_header dl{
+    position: relative;
+    /* min-height: 63px; */
+    padding-right: 0;
+    padding-left: 35px;
+    margin: 0;
+
+}
+
+/* 각 세부 설정 */
+/* 이미지 태그 포함 css */
+.top_title_header dt{
+    position: absolute;
+    width: 23px;
+    height: 19px;
+    top: 0;
+    left: 0;
+    text-indent: -9999em;
+    background: url(https://www.1365.go.kr/web/vols/images/ico/ico_caution.png) no-repeat left top;
+}
+
+.top_title_header dd{
+    position: relative;
+    margin: 0;
+}
+
+.top_title_header dd div span{
+    display: table-cell;
+    vertical-align: middle;
+    letter-spacing: -0.005em;
+    line-height: 19px;
+}
+
+.board_view .type2{
+    margin-top: 0;
+    padding: 0;
+    border-top: 2px solid #333;
+}
+
+.em{
+    color: #f3521a;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.board_view .type2{
+    margin-top: 0;
+    padding: 0;
+    border-top: 2px solid #333;
+}
+
+/* ---------------------------------- */
+
+.import{
+    padding-bottom: 15px;
+    text-align: right;
+    color: #f3521a;
+    font-size: 14px;
+    margin: 0;
+}
+
+.board_data .group{
+    overflow: hidden;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.board_data.type2 .group {
+    overflow: hidden;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.board_data2.type2 .group.group_dl1{
+    width: auto;
+    border-bottom: none;
+}
+
+.board_data{
+    border-top: 1px solid #ccc;
+}
+
+.board_data2.type2 .group dl {
+    position: relative;
+    width: 50%;
+    margin-right: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+.board_data2 dl {
+    float: left;
+    margin-right: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.board_data.type2 .group dl dt {
+    float: left;
+    width: 116px;
+    padding: 8px 0;
+    line-height: 22px;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #ccc;
+    background: #eee;
+    color: #333;
+    text-align: center;
+}
+
+.board_data dl dt {
+    float: left;
+    padding-right: 5px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.board_data.type2 .group dl dd {
+    position: relative;
+    float: left;
+    width: 300px;
+    margin-left: -1px;
+    padding: 8px 10px;
+    padding-right: 0;
+    font-weight: normal;
+    line-height: 22px;
+    color: #666;
+    min-height: 22px;
+}
+
+.board_data dl dd {
+    float: left;
+    font-weight: 400;
+    color: #666;
+    font-size: 14px;
+    letter-spacing: -0.025em;
+}
+
+.board_data.type2 .group.group_dl1 dl {
+    width: 100%;
+}
+
+.board_data.type2 .group dl dt{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.board_data.type2 .group dl{
+    margin: 0;
+}
+
+.board_data.type2 .group dl dd .form_block {
+    width: 860px;
+}
+
+.name{
+    height: 36px;
+}
+
+.AGEN_name{
+    height: 36px;
+}
+
+.main_tag{
+    width: 285px;
+    height: 30px;
+}
+
+.board_data.type2 .group dl dt span {
+    color: #f3521a;
+}
+
+
+.board_data.type2 .group dl.file dd {
+    padding-bottom: 0;
+}
+
+.board_data.type2 .group.group_dl1 dl dd {
+    width: 80%;
+}
+
+.board_data.type2 .group dl.file dd .file_t_g span {
+    display: block;
+    text-align: right;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn.save{
+    background-color: rgba(243, 99, 0, 0.8); /* Orange color */
+    padding: 0 32px;
+    height: 40px;
+}
+
+.btn.cancel {
+    background-color: #757575; /* Gray color */
+    padding: 0 32px;
+    height: 40px;
+}
+
+.btn.list {
+    background-color: #757575; /* Gray color */
+    padding: 0 32px;
+    height: 40px;
+}
+
+dl .dd_file{
+    width: 1000px;
+}
+
+
+.group dd.dd_file .file_t_g{
+    width: 900px;
+}
+
+.file_text{
+    height: 70px;
+}
+
+.email-container {
+    display: flex;
+    align-items: center;
+}
+.email-input {
+    width: calc(50% - 12px);
+    height: 30px;
+}
+.email-at {
+    margin: 0 5px;
+}
+.email-select {
+    width: calc(50% - 12px);
+    height: 34px;
+}
+.email-checkbox {
+    margin-left: 10px;
+}
+
+.margin-left {
+    margin-left: 10px;
+}
+
+
+.select_detail
+{
+    height: 36px;
+}
+
+.DT{
+    height: 370px;
+}
+
+.text_area{
+    height: 511px;
+}
+
+textarea{
+    width: 850px;
+    height: 500px;
+    resize: none;
+}

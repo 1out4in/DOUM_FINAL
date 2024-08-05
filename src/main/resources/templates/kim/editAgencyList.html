@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기관 정보 수정하기</title>
+    <link rel="stylesheet" href="edit-Agency-List.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+<!-- 임시 헤더 (위치잡기용) -->
+<header><h1>nav바</h1></header>
+
+<!-- 상세보기 틀 -->
+<div id="contentwrap">
+    <div id="contents"> <!-- side바를 만들지 말지 회의중이라 왼쪽에 빈곳이 있음 -->
+        <div class="content" id="content">
+            <div class="content_header">
+                <h2 class="top_title">기본 정보</h2>
+            </div>
+
+            <!-- 등록글 제목 -->
+            <div class="content_view">
+                <div class="customer_center">
+                    <form method="post" name="#" id="#">
+                        <div class="board_view type2">
+                            <h3 class="top_title_header">
+                                <img src="https://www.1365.go.kr/web/vols/images/ico/ico_tit_lv2.png">
+                                기관 정보</h3>
+
+                            <!-- 등록글 내역 -->
+                            <div class="board_data type2">
+                                <div class="group group_dl1">
+                                    <dl>
+                                        <dt>아이디</dt>
+                                        <dd>DOUM0011</dd>
+
+                                        <dt>회원번호</dt>
+                                        <dd>27190508</dd>
+
+                                        <dt class="name">기관명</dt>
+                                        <dd>00센터</dd>
+
+                                        <dt>계정생성일</dt>
+                                        <dd>1999-02-08</dd>
+
+                                        <dt class="location">※주소</dt>
+                                        <!-- <dd>
+                                            <input type="text" class="input-field short-width" value="00000">
+                                            <a href="#"><span class="button">우편번호 찾기</span></a>
+                                        </dd> -->
+                                        <dd class="dd2">
+                                            <select type="text" class="input-field full-width margin-top">
+                                                <option>전체</option>
+                                                <option>서울특별시</option>02
+                                                <option>서울특별자치시</option>02
+                                                <option>경상남도</option>055
+                                                <option>경상북도</option>054
+                                                <option>대구광역시</option>053
+                                                <option>울산광역시</option>052
+                                                <option>부산광역시</option>051
+                                                <option>인천광역시</option>032
+                                                <option>광주광역시</option>062
+                                                <option>대전광역시</option>042
+                                                <option>경기도</option>031
+                                                <option>강원특별자치도</option>033
+                                                <option>충청북도</option>043
+                                                <option>충청남도</option>041
+                                                <option>전북특별자치도</option>063
+                                                <option>전라남도</option>061
+                                                <option>제주특별자치도</option>064
+                                            </select>
+                                            <input type="text" class="input-field full-width margin-top" placeholder="도로명주소">
+                                            <input type="text" class="input-field full-width margin-top" placeholder="상세주소">
+                                        </dd>
+
+                                        <dt class="cell_phone">휴대폰 번호</dt>
+                                        <dd>
+                                            <select class="select-field inline">
+                                                <option value="010">010</option>
+                                                <option>011</option>
+                                                <option>016</option>
+                                                <option>017</option>
+                                                <option>018</option>
+                                                <option>019</option>
+                                            </select>
+                                            -
+                                            <input type="text" class="input-field short-width inline" placeholder="1234" maxlength="4">
+                                            -
+                                            <input type="text" class="input-field short-width inline" placeholder="5678" maxlength="4">
+                                            <input type="checkbox" class="margin-left"> 없음
+                                        </dd>
+
+                                        <dt class="phone">유선전화 번호</dt>
+                                        <dd>
+                                            <select class="select-field inline">
+                                                <option value="선택">선택</option>
+                                                <option>02</option>
+                                                <option>02</option>
+                                                <option>064</option>
+                                                <option>063</option>
+                                                <option>062</option>
+                                                <option>061</option>
+                                                <option>055</option>
+                                                <option>054</option>
+                                                <option>053</option>
+                                                <option>052</option>
+                                                <option>051</option>
+                                                <option>043</option>
+                                                <option>042</option>
+                                                <option>032</option>
+                                                <option>041</option>
+                                                <option>033</option>
+                                                <option>031</option>
+                                            </select>
+                                            -
+                                            <input type="text" class="input-field short-width inline" placeholder="123" maxlength="3">
+                                            -
+                                            <input type="text" class="input-field short-width inline" placeholder="4567" maxlength="4">
+                                            <input type="checkbox" class="margin-left" checked> 없음
+                                        </dd>
+
+                                        <dt class="Email">이메일 주소</dt>
+                                        <dd class="email-container">
+                                            <input type="text" class="input-field email-input" placeholder="DOUM01">
+                                            <span class="email-at">@</span>
+                                            <input type="text" class="input-field email-input" placeholder="gmail.com">
+                                            <select class="select-field email-select margin-left">
+                                                <option value="직접입력">직접입력</option>
+                                                <option>naver.com</option>
+                                                <option>gmail.com</option>
+                                                <option>daum.net</option>
+                                                <option>yahoo.co.kr</option>
+                                                <option>nate.com</option>
+                                                <option>dreamwiz.com</option>
+                                                <option>hanmail.net</option>
+                                            </select>
+                                            <input type="checkbox" class="email-checkbox"> 없음
+                                        </dd>
+
+                                        <dt class="Agree_receive">수신동의여부</dt>
+                                        <dd class="radio-group"> 휴대전화/유선전화
+                                            <input type="radio" name="receive" checked>수신동의
+                                            <input type="radio" name="receive"> 수신거부
+                                        </dd>
+
+                                        <dt class="Email_receive"></dt>
+                                        <dd class="radio-group">이메일 수신
+                                            <input type="radio" name="email" checked> 수신동의
+                                            <input type="radio" name="email"> 수신거부
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="info">수신동의 시 봉사활동 정보, 신청결과통보,
+                            봉사활동에 필요한 정보 등을 제공 받을 수 있으며
+                            정보제공 및 수신동의 하신 것으로 처리됩니다.</p>
+                    </form>
+                    <div class="button-container">
+                        <button class="btn save">저장</button>
+                        <button class="btn cancel">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

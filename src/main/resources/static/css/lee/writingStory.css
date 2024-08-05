@@ -1,0 +1,223 @@
+
+*{
+
+
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+
+}
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #1c1b1b;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+input[type="file"],
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+
+.fin_btn{
+    width: 100%;
+    padding: 15px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+button[type="submit"] {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+
+
+
+
+form {
+    /* 다음 줄과의 간격 조정 */
+    margin-bottom: 20px;
+}
+
+/* 각 폼 그룹의 간격 조정 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* 라벨과 입력 요소 사이의 간격 조정 */
+label, select, input, textarea {
+    margin-bottom: 10px;
+}
+
+/* 버튼의 상단 간격 조정 */
+.fin_btn {
+    margin-top: 15px;
+}
+
+
+
+header {
+    /* 아래 두 줄 중앙으로 가게끔 한거임  */
+    width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    /* border-bottom: 1px solid #ddd; */
+    border: 1px solid #1c1b1b;
+    height: 35px;
+}
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_nav {
+    flex-grow: 1;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+}
+
+button[type="button"] {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #ddd;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #ccc;
+}
+.home-button {
+    margin-left: 20px;
+}
+
+/* 알림창 nav바에 추가 */
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.nav-right {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+.nav-right button {
+    background-color: #ddd;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.nav-right form {
+    display: flex;
+}
+
+.nav-right input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+}
+
+.nav-right button[type="submit"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.nav-right button[type="submit"]:hover {
+    background-color: #ccc;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+footer {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+
+
+}
+footer img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+footer p {
+    margin: 0;
+}

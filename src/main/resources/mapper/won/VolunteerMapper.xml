@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.doum.mapper.won.VolunteerMapper">
+
+    <select id="selectVolunteerTitles">
+        SELECT
+            VOLUNTEER_ID,
+            LOCATION_ID,
+            ORGANIZATION_ID,
+            TITLE,
+            CONTENT,
+            CATEGORY,
+            TARGET,
+            RECRUIT_START_DATE,
+            RECRUIT_END_DATE,
+            RECRUIT_NUMBER,
+            VOLUNTEER_DATE,
+            IS_ADULT_ALLOWED,
+            IS_TEEN_ALLOWED,
+            IS_ONLINE
+        FROM
+            TBL_VOLUNTEER
+    </select>
+
+
+
+</mapper>

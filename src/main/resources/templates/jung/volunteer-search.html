@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>봉사 검색</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/jung/volunteer-search.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="volunteer-search-header">
+        <h1>봉사찾기</h1>
+        <hr />
+      </header>
+      <section class="search-section">
+        <div class="search-header">
+          <h2><img src="https://www.1365.go.kr/web/vols/images/ico/ico_tit_lv2.png" />봉사조회</h2>
+        </div>
+        <div class="search-select">
+          <table class="select-table">
+            <tr class="select-header">
+              <th>봉사지역</th>
+              <th>봉사분야</th>
+              <th>활동구분</th>
+              <th>봉사대상</th>
+              <th>모집상태</th>
+            </tr>
+            <tr>
+              <td>
+                <select class="select-dropdown" size="4">
+                  <option value="">전체</option>
+                  <option value="">경기</option>
+                  <option value="">강원도</option>
+                  <option value="">충청</option>
+                  <option value="">전북</option>
+                  <option value="">전남</option>
+                  <option value="">경남</option>
+                  <option value="">경북</option>
+                </select>
+              </td>
+              <td>
+                <select class="select-dropdown" size="4">
+                  <option value="">전체</option>
+                  <option value="">교육</option>
+                  <option value="">환경</option>
+                  <option value="">건강</option>
+                  <option value="">문화</option>
+                  <option value="">재난</option>
+                  <option value="">사회</option>
+                </select>
+              </td>
+              <td>
+                <select class="select-dropdown" size="4">
+                  <option value="">전체</option>
+                  <option value="">온라인</option>
+                  <option value="">오프라인</option>
+                  <option value="">온라인+오프라인</option>
+                </select>
+              </td>
+              <td>
+                <select class="select-dropdown" size="4">
+                  <option value="">전체</option>
+                  <option value="">아동, 청소년</option>
+                  <option value="">장애인</option>
+                  <option value="">노인</option>
+                  <option value="">다문화</option>
+                  <option value="">여성</option>
+                  <option value="">환경</option>
+                  <option value="">기타</option>
+                </select>
+              </td>
+              <td>
+                <select class="select-dropdown" size="4">
+                  <option value="">전체</option>
+                  <option value="">모집중</option>
+                  <option value="">모집완료</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="box">
+          <form class="volunteer-form">
+            <div class="form-group">
+              <label for="start-date">봉사기간</label>
+              <input type="date" id="start-date" name="start-date" />
+              <span>~</span>
+              <input type="date" id="end-date" name="end-date" />
+            </div>
+            <div class="form-group">
+              <label>봉사자유형</label>
+              <input type="checkbox" id="adult" name="volunteer-type" checked /> 성인
+              <input type="checkbox" id="youth" name="volunteer-type" checked /> 청소년
+            </div>
+            <div class="form-group">
+              <label for="volunteer-name">봉사명</label>
+              <input type="text" id="volunteer-name" name="volunteer-name" />
+            </div>
+            <div class="form-group">
+              <label for="organization-name">수요처명</label>
+              <input type="text" id="organization-name" name="organization-name" />
+            </div>
+            <div class="form-group">
+              <label>재난 일감</label>
+              <input type="checkbox" id="disaster" name="disaster" checked /> 재난일감 포함
+              <input type="checkbox" id="disaster-only" name="disaster-only" /> 재난
+            </div>
+            <div class="form-buttons">
+              <button type="submit" class="search-btn">검색</button>
+              <button type="reset" class="reset-btn">초기화</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="list-section">
+        <div class="list-header">
+          <h3>목록보기</h3>
+          <hr />
+        </div>
+        <div class="list-wrap">
+          <ul class="list">
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                <div class="list-element-content">
+                  <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                  <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                  <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a>
+                <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                <div class="list-element-content">
+                  <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                  <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                  <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a>
+                <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                <div class="list-element-content">
+                  <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                  <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                  <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a>
+                <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                <div class="list-element-content">
+                  <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                  <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                  <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a>
+                <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                <div class="list-element-content">
+                  <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                  <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                  <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                </div>
+              </a>
+            </li>
+            <li class="list-element">
+              <a>
+                <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                <div class="list-element-content">
+                  <span><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                  <span><b>[봉사시간]</b> 10:00 ~ 14:00</span>
+                  <span><b>[봉사지역]</b> 인천광역시 남동구</span>
+                  <span><b>[모집기관]</b> 아름다운가게 인천간석점</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="paging-container">
+        <button class="page-button">&lt;</button>
+        <button class="page-button active">1</button>
+        <button class="page-button">2</button>
+        <button class="page-button">3</button>
+        <button class="page-button">2</button>
+        <button class="page-button">&gt;</button>
+      </div>
+    </div>
+  </body>
+</html>

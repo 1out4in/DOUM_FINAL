@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0;
+    
+    
+        background-image: url(img/logo.png)
+
+
+
+
+}
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="tel"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button {
+ background: linear-gradient(to right, rgba(249, 138, 12, 0.8) 0%, rgba(243, 99, 0, 0.8) 100%);;
+  }
+  
+  #address_select{
+    border-radius: 3px;
+    height: 30px;
+    border: 1px solid #ccc;
+  }
+
+  .agree_article,
+    .agree_article.depth2 {
+      list-style-type: none; 
+      padding-left: 0; 
+      font-size: 13px;
+    }
+
+    #terms {
+      font-size: 12px;
+      
+    
+    }
+
+    .cont_division{
+      margin-top: 15px;
+    }
+
+    .all_agree{
+      font-size: medium;  
+  }
+
+  li{
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none; /* Remove underline */
+  }

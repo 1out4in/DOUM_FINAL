@@ -1,0 +1,353 @@
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    display: flex;
+    width: 70%;
+    max-width: 1000px;
+    max-height: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-left {
+    width: 50%;
+}
+
+.modal-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-right {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.post-description {
+    margin-bottom: 20px;
+}
+
+.comments-section {
+    margin-bottom: 20px;
+}
+
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comments-list li {
+    margin-bottom: 10px;
+}
+
+.likes-section {
+    margin-bottom: 20px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.comment-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: gray;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+.comments-section {
+    margin-top: 20px;
+    height: 100px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.post-description {
+    height: 300px;
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.comment img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-content {
+    background-color: white;
+    padding: 10px;
+    border-radius: 0px;
+    width: 100%;
+    position: relative;
+}
+
+.comment-content p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.like-icon {
+    color: #ed4956;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.post-description {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-left {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.comment-options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.comment-options .fa-ellipsis-v {
+    font-size: 20px;
+}
+
+.comment-options-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-options-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.comment-options-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-options-content .delete-button {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.comment-options-content .report-button {
+    background-color: #f1c40f;
+    color: #fff;
+}
+
+.comment-options-content .cancel-button {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* 첫 번째 스타일 블록에만 있는 부분 */
+.edit-delete-buttons button {
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 15%;
+}
+
+.edit-delete-buttons button:hover {
+    background-color: #bbb;
+}
+
+.edit-delete-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.edit-delete-buttons button {
+    padding: 5px 10px; /* 수정한 부분: 버튼의 가로 패딩을 좀 더 줄임 */
+    margin-left: 5px;
+    font-size: 10px; /* 버튼의 글자 크기를 적절히 조정 */
+}
+
+.comments-section {
+    margin-top: 20px;
+    height: 100px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+/* 댓글 수정삭제 버튼  */
+.comment-options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.comment-options .fa-ellipsis-v {
+    font-size: 20px;
+}
+
+.comment-options-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-options-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.comment-options-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-options-content .delete-button {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.comment-options-content .report-button {
+    background-color: #f1c40f;
+    color: #fff;
+}
+
+.comment-options-content .cancel-button {
+    background-color: #ccc;
+    color: #000;
+}
+
+

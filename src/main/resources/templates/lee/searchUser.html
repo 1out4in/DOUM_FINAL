@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/lee/searchUser.css}" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<header class="common-width">
+    <h1>MyPage | DOUM</h1>
+    <div class="nav-right">
+<!--        <form action="/search" method="get">-->
+<!--            <input type="text" name="query" placeholder="Search users...">-->
+<!--            <button type="submit"><i class="fas fa-search"></i></button>-->
+<!--        </form>-->
+
+        <label>
+            <input type="text" name="search">
+            <button class="search-btn" type="button" onclick="saveKeyword()">검색</button>
+        </label>
+        <button type="button"><i class="fas fa-bell icon"></i></button>
+    </div>
+</header>
+
+
+
+
+
+
+<main>
+
+    <section style="width: 1200px;" class="main-container">
+        <h2>VOLUNTEERS</h2>
+<!--        <div>-->
+<!--            <label for="volunteer-type"> 정렬 </label>-->
+<!--            <select id="volunteer-type">-->
+<!--                <option value="environment"></option>-->
+<!--                <option value="education">연령대</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="contest-list">-->
+<!--            <div th:each="user, userStat :${users}" class="contest-item"-->
+<!--                 th:data-name="${user.name}"-->
+<!--                th:data-pic="${user.userId}"></div>-->
+<!--        <div class="contest-list">-->
+<!--            <div th:each="user:${users}">-->
+<!--                <div class="contest-item">-->
+<!--                    <img th:src="@{${user.profilePic}}" alt="userImg">-->
+<!--&lt;!&ndash;                    <img src="@{*{image}}" alt="userImg">&ndash;&gt;-->
+
+<!--                    <div class="contest-list-text">-->
+<!--                        <h3 th:text="${user.name}">username<span style="font-size: x-small;">★4.3</span> </h3>-->
+<!--&lt;!&ndash;                        <p><span style="font-weight: bold;">주 봉사지역</span> </p>&ndash;&gt;-->
+<!--                        <p><span style="font-weight: bold;">email</span> <span th:text="${user.email}"></span></p>-->
+<!--&lt;!&ndash;                        <p><span th:text="${user.email}"></span></p>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                        <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>&ndash;&gt;-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        <div class="contest-list">
+            <div th:each="user:${users}">
+                <a th:href="@{/Lee/myPage/{userId}(userId=${user.userId})}" class="contest-item">
+<!--                    <img th:src="@{${user.profilePic}}" alt="userImg">-->
+                    <img th:src="${user.profilePic}" alt="userImg">
+<!--                    <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202105/24/notepet/20210524031337477vmkh.jpg" alt="userImg">-->
+
+
+                    <div class="contest-list-text">
+                        <h3 th:text="${user.name}">username<span style="font-size: x-small;">★4.3</span> </h3>
+                        <p><span style="font-weight: bold;">email</span> <span th:text="${user.email}"></span></p>
+                    </div>
+                </a>
+            </div>
+
+
+
+
+
+
+
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTI4/MDAxNjE4ODQ5MzAxMDYz._Gue5YTe-oTAdUJvNs6beibTS4Dh7e2GCPhYhIfViUIg.lgS2THGm14_RIKpbvUQHl_xnrOie7wtNuhl286NE58Qg.JPEG.algus6210/%EA%B3%A0%EB%AF%BC%EC%8B%9C_(11).jpg?type=w800" alt="Climate Change">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3>Ally <span style="font-size: x-small;">★4.3</span>   </h3>-->
+<!--                    <p ><span style="font-weight: bold;">주 봉사 활동 지역</span>  <span>부산</span></p>-->
+<!--                    <p><span style="font-weight: bold;">연령대</span>  20대</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- jser 더 추가할거면 여기서 더 추가  -->
+        </div>
+    </section>
+</main>
+<footer>
+    <img src="../img/도움로고.png" alt="">
+    <p>Ministry of the Interior and Safety.All Rights reserved.</p>
+</footer>
+
+</body>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+<script>
+    // const pageSize = 10;
+    // let sortOption = '';
+    let search = null;
+    // let searchType = null;
+
+    // 처음 페이지가 로드 될 때 실행될 함수
+    window.onload = function(){
+        // searchType = $('select[name="search-type"]').val();
+        search = $('input[name="search"]').val();
+        // $('input[id="sort-newest"]').prop('checked', true);
+
+        getList(1);
+    }
+
+
+    function getList(page){
+        $.ajax({
+            method : 'get',
+            url : '/rest',
+            data : {
+
+                search : search
+            },
+            success:function (data){
+                // 리스트 뿌려주는 함수.
+                renderUser(data.content);
+
+            },
+            error:function (){
+                console.error('실패')
+            }
+        })
+    }
+
+    // 라디오 버튼 변경 이벤트
+    // $('input[name="sort-option"]').change(function (){
+    //     sortOption = $(this).val();
+    //     getList(1);
+    // })
+
+    // // 리스트 데이터를 받아서 랜더링 하는 함수.
+    // function renderBoard(boards){
+    //     const userContainer = $('.contest-list');
+    //     userContainer.empty();
+    //
+    //     boards.forEach(function(board) {
+    //         // let fileString = board.fileCount > 0 ? `  [첨부파일:${board.fileCount}]` : '';
+    //
+    //         let storyRow = `<tr><td>${user.Id}</td>
+    //         <td><a href="/lee/myPage/${user.userId}">${board.boardTitle}${fileString}</a></td>
+    //         <td>${board.name}</td>
+    //         <td>${board.boardViews}</td>
+    //         <td>${formatDate(board.boardRegisterDate)}</td></tr>`;
+    //         boardContainer.append(boardRow);
+    //     });
+    // }
+
+
+
+    // 리스트 데이터를 받아서 랜더링 하는 함수.
+    function renderUser(users){
+        const userContainer = $('.contest-list');
+        userContainer.empty();
+
+        users.forEach(function(user) {
+            // let fileString = board.fileCount > 0 ? `  [첨부파일:${board.fileCount}]` : '';
+
+            let userRow = `<tr><td>${user.userId}</td>
+            <td><a href="/lee/myPage/${user.userId}">${user.userId}</a></td>`;
+            userContainer.append(userRow);
+        });
+    }
+
+
+
+
+
+    // 페이징 처리 영역
+    // function renderPagination(pagination) {
+    //     const paginationContainer = $('.pagination');
+    //     paginationContainer.empty();
+
+        // 이전 버튼
+        // const prevDisabled = pagination.currentPage === 1 ? 'disabled' : '';
+        // paginationContainer.append(`
+        //     <li class="page-item ${prevDisabled}">
+        //         <a class="page-link" href="#" aria-label="Previous" data-page="${pagination.currentPage - 1}">
+        //             <span aria-hidden="true">&laquo;</span>
+        //         </a>
+        //     </li>
+        // `);
+        //
+        // for (let i = pagination.startPage; i <= pagination.endPage; i++) {
+        //     const activeClass = pagination.currentPage === i ? 'active' : '';
+        //     paginationContainer.append(`
+        //     <li class="page-item ${activeClass}">
+        //         <a class="page-link" href="#" data-page="${i}">${i}</a>
+        //     </li>
+        // `);
+        // }
+
+    //     const nextDisabled = pagination.currentPage === pagination.totalPages ? 'disabled' : '';
+    //     paginationContainer.append(`
+    //         <li class="page-item ${nextDisabled}">
+    //             <a class="page-link" href="#" aria-label="Next" data-page="${pagination.currentPage + 1}">
+    //                 <span aria-hidden="true">&raquo;</span>
+    //             </a>
+    //         </li>
+    //     `);
+    //
+    //     // 페이지 클릭했을 때 실행할 함수.
+    //     $('.page-link').click(function(event) {
+    //         event.preventDefault();
+    //         const selectedPage = $(this).data('page');
+    //         getList(selectedPage);
+    //     });
+    // }
+
+    function saveKeyword(){
+        // searchType = $('select[name="search-type"]').val();
+        search = $('input[name="search"]').val();
+        getList(1);
+    }
+
+</script>
+</html>

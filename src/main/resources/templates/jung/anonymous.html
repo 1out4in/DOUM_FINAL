@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>익명게시판</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/jung/anonymous.css}"/>
+  </head>
+  <body>
+    <div class="container">
+      <header class="announcement-header">
+        <h1>익명게시판</h1>
+        <hr />
+      </header>
+      <div class="search-section">
+        <select class="search-select">
+          <option>최신순</option>
+          <option>조회수</option>
+          <option>좋아요</option>
+        </select>
+        <div class="search-box">
+          <select class="search-type-select">
+            <option>제목</option>
+            <option>글작성자</option>
+          </select>
+          <input type="text" />
+          <button>검색</button>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일</th>
+            <th>조회수</th>
+            <th>좋아요</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="notice">1</td>
+            <td>
+              <a href="#">제목입니다<b>[3]</b></a>
+            </td>
+            <td>2024-06-28</td>
+            <td>157</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td class="notice">1</td>
+            <td>
+              <a href="#">제목입니다<b>[3]</b></a>
+            </td>
+            <td>2024-06-28</td>
+            <td>157</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td class="notice">1</td>
+            <td>
+              <a href="#">제목입니다 제목입니다<b>[3]</b></a>
+            </td>
+            <td>2024-06-28</td>
+            <td>157</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td class="notice">1</td>
+            <td>
+              <a href="#">제목입니다 제목입니다 제목입니다<b>[3]</b></a>
+            </td>
+            <td>2024-06-28</td>
+            <td>157</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td class="notice">1</td>
+            <td>
+              <a href="#">제목입니다 제목입니다 제목입니다 제목입니다<b>[3]</b></a>
+            </td>
+            <td>2024-06-28</td>
+            <td>157</td>
+            <td>11</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="paging-container">
+        <button class="page-button">&lt;</button>
+        <button class="page-button active">1</button>
+        <button class="page-button">2</button>
+        <button class="page-button">3</button>
+        <button class="page-button">4</button>
+        <button class="page-button">&gt;</button>
+      </div>
+    </div>
+  </body>
+</html>

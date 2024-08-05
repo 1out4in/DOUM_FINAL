@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: -0.06em;
+}
+
+h2 {
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.025em;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Optionally set text color to inherit */
+}
+
+a:hover {
+  text-decoration: none; /* Add underline on hover (optional) */
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-between; /* Distribute items to each end */
+  align-items: center; /* Center items vertically */
+  padding: 10px;
+  margin-bottom: 20px; /* Optional: Add padding for spacing */
+}
+
+.search-select {
+  height: 32px;
+  width: 100px;
+}
+
+.search-type-select {
+  height: 32px;
+  width: 90px;
+  border-radius: 0px;
+  padding-top: 3px;
+}
+
+.search-section input[type="text"] {
+  width: 200px;
+  height: 32px;
+  /* margin-right: 10px; */
+  padding-top: 4px;
+  border-radius: 0px;
+  border: solid 1px black;
+}
+.search-section button {
+  height: 32px;
+  width: 50px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  height: 50px;
+}
+
+tr th:first-child,
+tr td:first-child {
+  border-left: none;
+}
+
+tr th:last-child,
+tr td:last-child {
+  border-right: none;
+}
+
+thead {
+  border-bottom-style: solid;
+  border-top-style: solid;
+  border-top-width: 0.3ch;
+  border-top-color: black;
+}
+th {
+  background-color: #f2f2f2;
+}
+.notice {
+  font-weight: bold;
+  color: #333;
+}
+
+.paging-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center align items horizontally */
+}
+
+.page-button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.page-button:hover {
+  background-color: #e0e0e0;
+}
+
+.page-button.active {
+  background-color: #c0392b;
+  color: #fff;
+}

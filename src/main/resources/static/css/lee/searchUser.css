@@ -1,0 +1,186 @@
+
+*{
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.main-container {
+    width: 1200px;
+    width: 90%;
+    margin: 0 auto; /* This centers the main element */
+    background-color: #F7F7F7; /* Optional: to see the container better */
+    padding: 20px; /* Optional: some padding for better appearance */
+    border: 1px solid #191818;
+    margin-top: 20px;
+
+}
+/* header css */
+header {
+    /* 아래 두 줄 중앙으로 가게끔 한거임  */
+    width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #F7F7F7;
+    /* border-bottom: 1px solid #ddd; */
+    border: 1px solid #1c1b1b;
+}
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    flex-grow: 1;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+}
+button[type="submit"] {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #ddd;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #ccc;
+}
+.home-button {
+    margin-left: 20px;
+}
+/* 메인 css  */
+
+h2 {
+    color: #333;
+}
+
+.contest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 푸터 css */
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    /* display: flex; */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+
+}
+
+footer img {
+    max-width: 50px; /* Adjust the size as needed */
+    margin-right: 10px; /* Space between the image and the text */
+}
+
+footer p {
+    margin: 0;
+}
+
+.contest-item {
+    background-color: #F7F7F7;
+    border: 1px solid #ddd;
+    /* padding: 10px; */
+    width: 300px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+.contest-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 30px;
+}
+
+
+.contest-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.contest-list-text{
+    padding: 10px;
+}
+
+
+
+/* 알림창 nav바에 추가 */
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right button {
+    background-color: #ddd;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.nav-right form {
+    display: flex;
+}
+
+.nav-right input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+}
+
+.nav-right button[type="submit"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.nav-right button[type="submit"]:hover {
+    background-color: #ccc;
+}
+
+.icon {
+    font-size: 20px;
+}
+

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.doum.mapper.lee.LeeMapper">
+
+
+<!--    유 저 !!!! -->
+    <!--    마이페이지 유저 프로필 정보 가져오기-->
+    <select id="getUser" resultType="LeeUsersDTO">
+        select U.USER_ID,U.NAME,U.INTRODUCTION,U.EMAIL,U.PHONE_NUMBER,u.profile_pic
+        from  TBL_USER U
+        WHERE  U.USER_ID = #{userId}
+    </select>
+
+    <select id="getUsers" resultType="LeeUsersDTO">
+        select U.USER_ID,U.NAME,u.email,u.profile_pic
+        from  TBL_USER U
+    </select>
+
+
+
+
+    <!--    마이페이지 유저가 작성한 게시물 목록 가져오기 ㅇㅇ -->
+    <select id="getStories" resultType="LeeMyPageStoryDTO">
+        SELECT S.STORY_ID,S.TITLE, S.CONTENT, S.CREATED_DATE, S.VIEWS, SI.FILE_LOCATION AS IMAGE
+        FROM TBL_STORY S LEFT JOIN TBL_STORY_IMG SI ON S.STORY_ID=SI.STORY_ID
+        WHERE S.USER_ID =#{userId}
+        ORDER BY S.CREATED_DATE DESC
+    </select>
+
+
+<!--    스 토 리 !!!! -->
+
+
+    <!--    마이페이지 총 스토리 갯수 ㅇㅇ-->
+    <select id="countMyPageStories">
+        select count(*)
+        from TBL_STORY
+    </select>
+
+
+
+    <!--  게시글 수정하기  -->
+    <update id="updateStory">
+        update TBL_STORY
+        set TITLE = #{title},
+            CONTENT = #{content}
+        where STORY_ID = #{storyId}
+    </update>
+
+
+
+    <!--  마이페이지 스토리 조회 수 +1  -->
+<!--    <update id="plusStoryView">-->
+<!--        update TBL_STORY-->
+<!--        set VIEWS = VIEWS + 1-->
+<!--        where STORY_ID = #{storyId}-->
+<!--    </update>-->
+
+
+
+
+<!--    <insert id="saveStory">-->
+<!--    INSERT INTO TBL_STORY-->
+<!--    VALUES (#{storyId}, #{userId},#{anonymousId}, #{appliedVolunteerId},#{title},#{content},sysdate, 0)-->
+<!--    </insert>-->
+
+    <insert id="saveStory">
+        INSERT INTO TBL_STORY
+        VALUES (#{storyId}, #{userId}, #{appliedVolunteerId},#{title},#{content},sysdate, 0)
+    </insert>
+
+
+
+
+    <!-- 마이페이지 스토리 삭제하기  -->
+    <delete id="deleteStory">
+        delete from TBL_STORY
+        where STORY_ID = #{storyId}
+    </delete>
+
+    <!--  다음 시퀀스를 가져오는 쿼리문  -->
+    <!--  마이페이지 스토리 insert 시 사용할 예정  -->
+    <select id="getSeq" resultType="long">
+        select SEQ_STORY.nextval from dual
+    </select>
+
+
+
+
+    <!--    게시물 상세보기  select -->
+    <select id="selectMyPageStory" resultType="LeeMyPageStoryDTO">
+        SELECT
+            S.STORY_ID,
+            S.TITLE,
+            S.CONTENT,
+            U.NAME,
+            S.VIEWS,
+            S.CREATED_DATE,
+            U.USER_ID,
+            (SELECT COUNT(*) FROM TBL_STORY_IMG SI WHERE SI.STORY_ID = S.STORY_ID) AS IMG_COUNT
+        FROM
+            TBL_STORY S JOIN TBL_USER U ON U.USER_ID = S.USER_ID
+        where S.STORY_ID = #{storyId}
+    </select>
+
+
+
+
+<!--    스 토 리 첨 부 파 일 !! (이미지)-->
+    <!--  게시글 첨부파일 추가  -->
+    <insert id="insertFile">
+        insert into tbl_story_img
+        values (seq_story_img.nextval, #{storyId}, #{fileLocation})
+    </insert>
+
+    <!--    게시글 번호로 첨부파일 삭제 -->
+    <delete id="deleteStoryImg">
+        delete from TBL_STORY_IMG
+        where story_id=#{storyId}
+    </delete>
+
+
+    <!--  마이페이지 스토리 번호로 첨부파일(마이페이지 스토리 사진들) 가져오기  -->
+    <select id="selectStoryImgList" resultType="LeeStoryImageDTO">
+        select
+            STORY_IMG_ID,
+            FILE_LOCATION,
+            STORY_ID
+        from
+            TBL_STORY_IMG
+        where STORY_ID = #{storyId}
+    </select>
+
+    <!--    파일(스토리 이미지) id를 이용해서 스토리사진 정보 가져오기-->
+    <select id="getImgById" resultType="LeeStoryImageDTO">
+        select
+            STORY_IMG_ID,
+            FILE_LOCATION,
+            STORY_ID
+        from
+            TBL_STORY_IMG
+        where STORY_IMG_ID = #{storyImgId}
+
+    </select>
+
+
+<!--    스 토 리 댓 글  !!!! -->
+
+    <!--    특정 게시글의 모든 댓글 조회-->
+    <select id="selectCommentById" resultType="LeeCommentListDTO">
+        select U.name, SC.*
+        from TBL_USER U join TBL_STORY_COMMENT SC
+                              on U.USER_ID = SC.USER_ID
+                                  and STORY_ID = #{storyId}
+        order by CREATED_DATE desc
+    </select>
+
+
+    <!--  특정 게시글에 댓글 추가  -->
+    <insert id="insertStoryComment">
+        insert into TBL_STORY_COMMENT (STORY_COMMENT_ID, STORY_ID, USER_ID, CONTENT, CREATED_DATE)
+        values (seq_story_comment.nextval, #{storyId}, #{userId}, #{content}, sysdate);
+    </insert>
+
+
+    <!-- 댓글 삭제-->
+    <delete id="deleteStoryComment">
+        delete from TBL_STORY_COMMENT
+        where STORY_COMMENT_ID=#{storyCommentId}
+    </delete>
+
+    <!--  댓글  수정 (시간은 어떻게 할건지. ..?) -->
+    <update id="updateStoryComment">
+        update TBL_STORY_COMMENT
+        set
+            CONTENT = #{content}
+        where STORY_COMMENT_ID = #{storyCommentId}
+    </update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    &lt;!&ndash;   마이페이지 속 게시물에 달린 댓글 가져오기&ndash;&gt;-->
+<!--    <select id="getComments" resultType="LeeCommentDTO">-->
+<!--        SELECT SC.STORY_ID, SC.USER_ID, SC.CONTENT-->
+<!--        FROM TBL_STORY_COMMENT SC JOIN TBL_USER U ON SC.USER_ID=U.USER_ID-->
+<!--        WHERE SC.STORY_ID = #{storyId}-->
+<!--        ORDER BY SC.CREATED_DATE ASC-->
+<!--    </select>-->
+
+
+
+
+<!--    &lt;!&ndash;  마이페이지 게시물에 달린 공감 수 가져오기&ndash;&gt;-->
+<!--    <select id="getLikes">-->
+<!--        SELECT COUNT(*) AS LIKE_COUNT-->
+<!--        FROM TBL_STORY_LIKE-->
+<!--        WHERE STORY_ID =#{storyId}-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;    마이페이지 유저가 받은 리뷰 가져오기&ndash;&gt;-->
+<!--    <select id="getReviews">-->
+<!--        SELECT UR.USER_REVIEW_ID, UR.CONTENT, UR.RATING, O.NAME AS ORGANIZATION_NAME-->
+<!--        FROM TBL_USER_REVIEW UR JOIN TBL_ORGANIZATION O ON UR.ORGANIZATION_ID = O.ORGANIZATION_ID-->
+<!--        WHERE UR.USER_ID = #{userId}-->
+<!--    </select>-->
+
+
+
+
+
+
+<!--    &lt;!&ndash;  마이페이지 스토리 수정하기  &ndash;&gt;-->
+<!--    <update id="updateStory">-->
+<!--        update TBL_STORY-->
+<!--        set TITLE = #{boardTitle},-->
+<!--            CONTENT = #{boardContent}-->
+<!--        where STORY_ID = #{storyId}-->
+<!--    </update>-->
+
+
+
+
+
+
+<!--    &lt;!&ndash;   Searchuser 관련 &ndash;&gt;-->
+
+
+
+
+
+
+
+
+    <!-- 동적 쿼리 -->
+    <select id="selectUser" resultType="LeeUsersDTO">
+        SELECT U.USER_ID,U.NAME,U.EMAIL,U.PROFILE_PIC
+        FROM TBL_USERS U
+        <where>
+            <if test="search != null">
+                <choose>
+                    <when test="searchType == 'user'">U.name LIKE '%' || #{search} || '%'</when>
+                </choose>
+            </if>
+        </where>
+    </select>
+
+
+
+
+
+    <update id="updateProfilePic" parameterType="map">
+        UPDATE TBL_USER
+        SET profile_pic = #{filePath}
+        WHERE USER_ID = #{userId}
+    </update>
+
+
+
+
+
+
+
+
+
+    <update id="updateIntroduction" parameterType="map">
+        UPDATE TBL_USER
+        SET introduction = #{introduction}
+        WHERE USER_ID = #{userId}
+    </update>
+
+
+
+    <!-- 리뷰를 사용자 ID로 조회하는 쿼리 -->
+    <select id="findReviewsByUserId" resultType="LeeOrgReviewDTO">
+        SELECT
+            ORGANIZATION_REVIEW_ID AS organizationReviewId,
+            ORGANIZATION_ID AS organizationId,
+            USER_ID AS userId,
+            CONTENT AS content,
+            RATING AS rating
+        FROM TBL_ORGANIZATION_REVIEW
+        WHERE USER_ID = #{userId}
+    </select>
+
+
+
+
+
+
+</mapper>

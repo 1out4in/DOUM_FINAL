@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/lee/myPage.css}" />
+    <style>
+        /* 모달의 배경 스타일 */
+        .modal {
+            display: none; /* 모달을 기본적으로 숨김 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0); /* 검은색 배경 */
+            background-color: rgba(0,0,0,0.4); /* 배경의 투명도 조정 */
+        }
+
+        /* 모달의 콘텐츠 스타일 */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% 위쪽, 자동 좌우 중앙 정렬 */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* 너비 설정 */
+        }
+
+        /* 모달 닫기 버튼 스타일 */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .history-writing-container {
+            display: flex; /* 플렉스 레이아웃 활성화 */
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: space-between; /* 좌우 여백 균등 분배 */
+            margin-bottom: 20px; /* 아래쪽 여백 추가 */
+        }
+
+
+
+    </style>
+</head>
+<body>
+<header class="common-width">
+    <h1>MyPage | DOUM</h1>
+    <div class="nav-right">
+        <form action="/search" method="get">
+            <input type="text" name="query" placeholder="Search users...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <button type="button"><i class="fas fa-bell icon"></i></button>
+    </div>
+</header>
+<main style="width: 1200px;" class="main-container common-width">
+    <section class="basic-info">
+        <h2>ABOUT ME</h2>
+        <div class="info-wrapper">
+            <div class="photo">
+                <img th:src="${user.profilePic}" alt="userImg">
+            </div>
+            <div class="text-info">
+                <h3>
+                    <span style="font-size: larger;" th:text="${user.name}"></span>님의 마이페이지
+                    <span style="font-size: x-small;">★4.3</span>
+                </h3>
+                <div style="margin-bottom: 50px;" class="basic-info-short">
+                    <p><strong>이메일</strong> <span th:text="${user.email}">doum@gmail.com</span></p>
+                    <p>
+                        <strong>별점</strong> 4.3
+                        <button id="view-reviews-btn" style="background-color: #ddd; border: none;">리뷰 상세보기</button>
+                    </p>
+                </div>
+                <div class="basic-info-long";>
+                    <p th:text="${user.introduction}"></p>
+                    <button style="cursor: pointer" class="btn_tistory" id="edit-intro-btn">자기소개글 수정</button>
+
+
+                    <button style="cursor: pointer" class="btn_tistory" id="profile-button-pic">프로필 사진 수정</button>
+                    <br>
+                    <br>
+<!--                    <a style="text-decoration: none; text-align: center;" th:href="@{/Lee/writingStoryT/{userId}(userId=${user.userId})}" class="btn_tistory">봉사 글 작성하기</a>-->
+<!--                    <a style="background-color: white" th:href="@{/Lee/writingStoryT/{userId}(userId=${user.userId})}" class="btn_tistory">봉사 글 작성하기</a>-->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+<!--        <h2>VOLUNTEER HISTORY</h2>-->
+<!--        <a style="background-color: white" th:href="@{/Lee/writingStoryT/{userId}(userId=${user.userId})}" class="btn_tistory">봉사 글 작성하기</a>-->
+
+        <div class="history-writing-container">
+            <h2>VOLUNTEER HISTORY</h2>
+            <a style="background-color: white" th:href="@{/Lee/writingStoryT/{userId}(userId=${user.userId})}" class="btn_tistory">봉사 글 작성하기</a>
+        </div>
+
+
+        <div class="contest-list">
+<!--            <div th:each="story, storyStat : ${stories}" class="contest-item"-->
+
+            <div th:each="story: ${stories}" class="contest-item"
+                 th:data-title="${story.title}"
+                 th:data-date="${#temporals.format(story.createdDate,'yyyy.MM.dd')}"
+                 th:data-org="${story.content}">
+                <a th:href="@{/Lee/story/{id}(id=${story.storyId})}">
+                    <img th:src="@{${storyImg[0].fileLocation}}" alt="게시물 이미지">
+                    <div class="contest-list-text">
+                        <h3 th:text="${story.title}">[도서관 책 정리-수서도서관] 0211321</h3>
+                        <p th:text="${#temporals.format(story.createdDate,'yyyy.MM.dd')}">2023.04.21</p>
+                        <p th:text="${story.content}">수서도서관</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <img src="../img/도움로고.png" alt="DAUM Logo">
+    <p>Ministry of the Interior and Safety. All Rights Reserved.</p>
+</footer>
+
+<!-- 프로필 사진 수정 모달 -->
+<div id="profilePicModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>프로필 사진 수정</h2>
+        <form id="profilePicForm" th:action="@{/Lee/updateProfilePic}" method="post" enctype="multipart/form-data">
+            <input type="file" name="profilePic" accept="image/*" required>
+            <input type="hidden" name="userId" value="1" />
+            <button type="submit" class="btn_tistory">업로드</button>
+        </form>
+    </div>
+</div>
+
+<!-- 자기소개 모달 -->
+<div id="introModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>자기소개글 수정</h2>
+        <form id="introForm" th:action="@{/Lee/updateIntroduction}" method="post">
+            <textarea name="introduction" rows="5" required th:text="${user.introduction}"></textarea>
+            <input type="hidden" name="userId" th:value="${user.userId}" />
+            <button type="submit" class="btn_tistory">수정</button>
+        </form>
+    </div>
+</div>
+
+<!-- 리뷰 모달 -->
+<div id="reviewModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>리뷰 상세보기</h2>
+        <div id="reviewsContainer">
+            <!-- 리뷰 내용이 여기에 동적으로 추가됩니다 -->
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 프로필 사진 모달
+        var profilePicModal = document.getElementById("profilePicModal");
+        var profilePicBtn = document.getElementById("profile-button-pic");
+        var profilePicSpan = profilePicModal.getElementsByClassName("close")[0];
+
+        profilePicBtn.onclick = function() {
+            profilePicModal.style.display = "block";
+        }
+
+        profilePicSpan.onclick = function() {
+            profilePicModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == profilePicModal) {
+                profilePicModal.style.display = "none";
+            }
+        }
+
+        // 자기소개글 모달
+        var introModal = document.getElementById("introModal");
+        var introBtn = document.getElementById("edit-intro-btn");
+        var introSpan = introModal.getElementsByClassName("close")[0];
+
+        introBtn.onclick = function() {
+            introModal.style.display = "block";
+        }
+
+        introSpan.onclick = function() {
+            introModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == introModal) {
+                introModal.style.display = "none";
+            }
+        }
+
+        // 리뷰 모달
+        var reviewModal = document.getElementById("reviewModal");
+        var reviewBtn = document.getElementById("view-reviews-btn");
+        var reviewSpan = reviewModal.getElementsByClassName("close")[0];
+
+        reviewBtn.onclick = function() {
+            var userId = 1; // 현재 로그인된 사용자 ID 또는 특정 사용자 ID
+
+            // AJAX 요청을 통해 리뷰 데이터를 가져옵니다
+            fetch(`/Lee/reviews?userId=${userId}`)
+                .then(response => response.json())
+                .then(data => {
+                    var reviewsContainer = document.getElementById("reviewsContainer");
+                    reviewsContainer.innerHTML = "";
+
+                    data.forEach(review => {
+                        var reviewElement = document.createElement("div");
+                        reviewElement.innerHTML = `
+                            <p><strong>Rating:</strong> ${review.rating}</p>
+                            <p><strong>Content:</strong> ${review.content}</p>
+                            <hr/>
+                        `;
+                        reviewsContainer.appendChild(reviewElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching reviews:', error);
+                });
+
+            reviewModal.style.display = "block";
+        }
+
+        reviewSpan.onclick = function() {
+            reviewModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == reviewModal) {
+                reviewModal.style.display = "none";
+            }
+        }
+    });
+</script>
+</body>
+</html>

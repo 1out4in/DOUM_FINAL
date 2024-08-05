@@ -1,0 +1,357 @@
+
+*{
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F7F7;
+}
+.main-container {
+    width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #191818;
+    margin-top: 20px;
+}
+h2 {
+    color: #333;
+}
+.contest-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.contest-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    width: 300px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.contest-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.basic-info {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+.basic-info img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.info-wrapper {
+    display: flex;
+    align-items: center;
+}
+.photo {
+    flex: 1;
+    margin-right: 20px;
+}
+.photo img {
+    width: 100%;
+    height: auto;
+}
+.text-info {
+    flex: 3;
+    margin-left: 10px;
+}
+.text-info p {
+    margin-bottom: 20px;
+}
+
+
+header {
+    /* 아래 두 줄 중앙으로 가게끔 한거임  */
+    width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    /* border-bottom: 1px solid #ddd; */
+    border: 1px solid #1c1b1b;
+}
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    flex-grow: 1;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+}
+button[type="submit"] {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #ddd;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #ccc;
+}
+.home-button {
+    margin-left: 20px;
+}
+.btn_tistory {
+    display: inline-block;
+    height: 40px;
+    padding: 0 14px;
+    background-color: #E0E0E0;
+    color: #100f0f;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+}
+footer {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+footer img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+footer p {
+    margin: 0;
+}
+.contest-list-text {
+    padding: 10px;
+}
+.basic-info-long {
+    color: #000000;
+}
+.basic-info-short {
+    color: #000000;
+}
+.basic-info-short p {
+    margin: 0;
+    padding: 2px 0;
+}
+/* 모달창 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 알림창 nav바에 추가 */
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right button {
+    background-color: #ddd;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.nav-right form {
+    display: flex;
+}
+
+.nav-right input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+}
+
+.nav-right button[type="submit"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.nav-right button[type="submit"]:hover {
+    background-color: #ccc;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+
+
+.modal-profile {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content-profile {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* profile */
+
+.modal-profile-pic {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content-profile-pic {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+.close-profile-pic {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-profile-pic:hover,
+.close-profile-pic:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* myPage.css */
+
+/* 모달 창 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

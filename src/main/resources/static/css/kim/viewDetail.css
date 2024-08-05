@@ -1,0 +1,393 @@
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1225px;
+    min-width: 1000px;
+}
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+#contents{
+    width: 1000px;
+    min-height: 1080px;
+    margin: 0 auto;
+}
+
+.content{
+    position: relative;
+    float: right;
+    width: 1000px;
+    padding: 60px 0 60px 0;
+}
+
+/* 봉사글 등록하는 기관 이름 */
+.content_header{
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.content_header h2{
+    padding-bottom: 17px;
+    border-bottom: 1px solid #ccc;
+    font-size: 35px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: -0.060em;
+}
+
+.top_title{
+    margin: 0;
+    line-height: 100%;
+}
+
+.content_view{
+    position: relative;
+}
+
+.top_title_header{
+    position: relative;
+    padding: 10px 20px 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.025em;
+}
+
+.board_view .type2{
+    margin-top: 0;
+    padding: 0;
+    border-top: 2px solid #333;
+}
+
+.board_data.type2 .group {
+    /* padding: 8px 0; */
+    overflow: hidden;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.board_data.type2 .group dl{
+    width: 110%;
+}
+
+.board_data.type2 .group dl dt {
+    /* position: absolute; */
+    float: left;
+    width: 115px;
+    padding: 8px 0;
+    line-height: 22px;
+    top: 0;
+    left: 0;
+    /* margin-left: -1px; */
+    border-right: 1px solid #ccc;
+    background: #eee;
+    color: #333;
+    text-align: center;
+}
+
+.board_data.type2 .group dl:last-child dd {
+    border-right: 0;
+}
+.board_data.type2 .group.group_dl1 dl dd {
+    width: 80%;
+}
+
+.board_data.type2 .group dl dd {
+    position: relative;
+    float: left;
+    width: 280px;
+    margin-left: -1px;
+    padding: 8px 10px;
+    /* padding-right: 0; */
+    font-weight: normal;
+    line-height: 22px;
+    color: #666;
+    min-height: 22px;
+    /* border-left: 1px solid #ccc; */
+    /* border-right: 1px solid #ccc; */
+}
+
+
+
+/* ------------------------------------------- */
+dl {
+    width: 50%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-size: 17px;
+}
+dt {
+    float: left;
+    width: 30%;
+    font-weight: bold;
+    clear: both;
+    border-bottom: 1px solid #ccc;
+}
+dd {
+    margin: 0 0 10px 30%;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+}
+
+.name{
+    height:34px;
+}
+.location{
+    height: 86px;
+    text-align: center;
+}
+
+.cell_phone{
+    height: 35px;
+}
+.phone{
+    height: 34px;
+}
+.Email{
+    height: 35px;
+
+}
+.Agree_receive{
+    height: 29px;
+    border-bottom: 0;
+}
+.Email_receive{
+    height: 27px;
+    border-top: 0;
+}
+
+dt.dd .group_tag{
+    text-align: right;
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    background-color: #666666;
+    cursor: pointer;
+    color: #fff;
+}
+.input-field {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.full-width {
+    width: calc(100% - 12px);
+}
+.short-width {
+    width: calc(25% - 12px);
+}
+.medium-width {
+    width: calc(50% - 12px);
+}
+.select-field {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.inline {
+    display: inline-block;
+}
+.margin-left {
+    margin-left: 10px;
+}
+.margin-top {
+    width: 250px;
+    margin-top: 0px;
+}
+.radio-group, .checkbox-group {
+    margin-top: 5px;
+}
+.email-container {
+    display: flex;
+    align-items: center;
+}
+.email-input {
+    width: calc(29% - 12px);
+}
+.email-at {
+    margin: 0 5px;
+}
+.email-select {
+    width: calc(20% - 12px);
+}
+.email-checkbox {
+    margin-left: 10px;
+}
+
+
+div.info{
+    padding: 20px 20px 30px;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.button-container {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.btn.save{
+    background-color: #f57c00; /* Orange color */
+    padding: 0 32px;
+    height: 40px;
+}
+
+.btn.cancel {
+    background-color: #757575; /* Gray color */
+    padding: 0 32px;
+    height: 40px;
+}
+
+.name_bar{
+    padding: 21px 25px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 18px;
+    padding-bottom: 0;
+    justify-content: space-between;
+}
+
+.LOC_bar{
+    display: flex;
+    padding: 21px 25px;
+    padding-top: 0;
+    font-size: 15px;
+    border-bottom: 1px solid #666;
+}
+
+.btn_sec.btn_sec_center {
+    text-align: center;
+}
+
+.border_bot{
+    position: relative;
+    margin-top: 25px;
+
+}
+
+button, button span {
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+    vertical-align: top;
+}
+button {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 0 none;
+    background: none;
+
+}
+
+.btn_submit span {
+    display: inline-block;
+    height: 40px;
+    padding: 0 33px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 40px;
+    /* border: 1px solid #ccc; */
+    color: #fff;
+    background: #f36200;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 기본 리스트들 css 값 */
+
+ul, ol, dl {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    list-style: none;
+}
+
+dt, dd, li {
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+}
+
+h3{
+    margin: 0;
+}

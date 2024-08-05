@@ -1,0 +1,320 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+div{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    border-bottom: .0625rem solid #f2f2f2;
+    height: 4.5rem
+    
+}
+
+.soom_logo{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.header{
+    display: flex;
+   justify-content:space-around ;
+   justify-content: center;
+   text-align: center;
+}
+   
+   .header-1 > div{
+       display: flex;
+       /* justify-content: center;
+       text-align: center; */
+    }
+    
+    .header-2{
+        /* justify-content: center;
+        text-align: center; */
+}
+
+.login{
+    display: flex;
+    /* justify-content: center;
+    text-align: center; */
+}
+
+#login{
+    text-align: center;
+    justify-content: center;
+}
+
+.card{
+    max-width: 26.5rem;
+    border: .0625rem solid #f2f2f2;
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin: 0 auto;
+    box-shadow: none;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -.3125rem;
+    margin-left: -.3125rem;
+}
+
+.main{
+
+
+width: 100%;
+max-width: 26.5rem;
+border: .0625rem solid #f2f2f2;
+border-radius: 8px;
+padding: 2.5rem;
+margin: 0 auto;
+box-shadow: none;
+
+
+
+
+}
+
+#button{
+    width: 5rem;
+    padding: .40625rem 0;
+    border-radius: 6px;
+    font-size: .875rem;
+    color: #fff;
+    background-color: #00c7ae;
+    border-color: #00c7ae;
+    border: 0px;
+    padding: 6.5 , 0px;
+}
+
+#id{
+
+}
+
+#password{
+
+}
+
+#input-1{
+    border-radius: 4px;
+    border: .0625rem solid #fa5963;
+    padding: .75rem;
+    width: 100%;
+}
+
+#input-2{
+    padding: .75rem;
+    border-radius: 4px;
+    border: .0625rem solid #e1e1e1;
+    width: 100%;
+}
+
+.button{
+    width: 100%;
+    /* margin-top: 20px; */
+    color: #fff;
+    background-color: #00c7ae;
+    border-color: #00c7ae;
+    text-align: center;
+    border: 0px;
+    margin-bottom: .75rem;
+    height: 48px;
+   border-radius: 4px;
+
+  
+    
+
+}
+
+.button div{
+  
+}
+
+
+button{
+    margin: 0;
+    font-family: inherit;
+}
+
+body{
+    margin: 0;
+    font-family: Noto Sans KR, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #323232;
+    text-align: left;
+}
+
+.middle{
+    display: flex;
+    padding-right: .3125rem;
+    padding-left: .3125rem;
+    
+    color: #737373;
+    padding: .375rem .5rem;
+}
+
+.middle > div{
+    display: flex;
+    margin: 0 auto 2rem;
+    font-size: .875rem;
+}
+.padding{
+    padding: 5rem 0;
+}
+
+.kakao{
+    background-color: #fee500;
+    border-color: #fee500;
+    color: rgba(0, 0, 0, .85);
+   
+    border-radius: 4px;
+
+    width: 100%;
+    /* margin-top: 20px; */
+ 
+   
+    text-align: center;
+    border: 0px;
+    margin-bottom: .75rem;
+    height: 48px;
+   border-radius: 4px;
+}
+
+.face{
+    background-color: #1876f1;
+    border-color: #1876f1;
+    color: #fff;
+    border-radius: 4px;
+
+    width: 100%;
+    /* margin-top: 20px; */
+ 
+   
+    text-align: center;
+    border: 0px;
+    margin-bottom: .75rem;
+    height: 48px;
+   border-radius: 4px;
+}
+
+
+.start{
+    padding-right: .3125rem;
+    padding-left: .3125rem;
+}
+
+.naver{
+    background-color: #03c75a;
+    border-color: #03c75a;
+    color: #fff;
+    border-radius: 4px;
+
+    width: 100%;
+    /* margin-top: 20px; */
+ 
+   
+    text-align: center;
+    border: 0px;
+    margin-bottom: .75rem;
+    height: 48px;
+   border-radius: 4px;
+}
+
+.textInput{
+    height: 100%;
+    /* margin: 0; */
+    border-radius: 6px;
+    padding: 0 .75rem;
+    background: #f2f2f2;
+}
+
+#input{
+    border: 0px;
+    background: #f2f2f2;
+    text-align: center;
+    justify-content: center;
+}
+
+.textInput > div{
+    text-align: center;
+    justify-content: center;
+}
+
+footer{
+    background: #fff;
+    border-top: .0625rem solid #e1e1e1;
+    padding: 1.3125rem 0 2.5rem;
+
+    margin: 0;
+    font-size: .875rem;
+    line-height: normal;
+    /* letter-spacing: normal; */
+    color: #737373;
+}
+
+
+.number{
+    padding-bottom: .1875rem;
+    font-size: 1.25rem;
+   
+    color: #00c7ae;
+}
+
+.apple{
+   
+    width: 8.5rem;
+   
+    background-color: #00c7ae;
+    border-radius: 1.28125rem;
+    color: #fff;
+    font-size: .75rem;
+   
+  
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: .5rem;
+    text-align: center;
+    
+}
+
+.play{
+    width: 8.5rem;
+   
+    background-color: #00c7ae;
+    border-radius: 1.28125rem;
+    color: #fff;
+    font-size: .75rem;
+   
+  
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: .5rem;
+    text-align: center;
+}
+
+.app{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+}
+
+
+
+#logo{
+    width: 50;
+    height: 150px;
+
+}

@@ -1,0 +1,215 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en"  xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>myPage</title>-->
+
+<!--    <link rel="stylesheet" th:href="@{/css/lee/myPage(user).css}" />-->
+<!--</head>-->
+<!--<body>-->
+<!--<header class="common-width">-->
+<!--    <h1>MyPage | DAUM</h1>-->
+<!--    <div class="nav-right">-->
+<!--        <form action="/search" method="get">-->
+<!--            <input type="text" name="query" placeholder="Search users...">-->
+<!--            <button type="submit"><i class="fas fa-search"></i></button>-->
+<!--        </form>-->
+<!--        <button type="button"><i class="fas fa-bell icon"></i></button>-->
+<!--    </div>-->
+<!--</header>-->
+<!--<main style="width: 1200px;" class="main-container common-width">-->
+<!--    <section class="basic-info">-->
+<!--        <h2>ABOUT ME</h2>-->
+<!--        <div class="info-wrapper">-->
+<!--            <div class="photo">-->
+<!--                <img th:src="${user.profilePic}" alt="프로필 사진">-->
+<!--&lt;!&ndash;                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfMTYw/MDAxNjE4ODQ5MzAwOTg5.zA9ZzE4rYrKuQwXqc7Zgg6VAjfAWXJiDguczAkAPyDkg.wZYEgmhS9AD8A5bOzJzfjrVtTeiMOHgFqNHfiVpdA9Ug.JPEG.algus6210/IMG_9958.JPG?type=w800" alt="">&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="text-info">-->
+<!--&lt;!&ndash;                <h3><span style="font-size: larger;">이영희</span> 님의 마이 페이지 <span style="font-size: x-small;">★4.3</span></h3>&ndash;&gt;-->
+<!--                <h3> <span style="font-size: larger;" th:text="${user.name}"></span>님의 마이페이지 <span style="font-size: x-small;">★4.3</span> </h3>-->
+<!--                <div style="margin-bottom: 50px;" class="basic-info-short">-->
+<!--                    <p><strong>나이</strong><span th:text="${user.age}">25</span> </p>-->
+<!--                    <p><strong>주 봉사활동 지역</strong> <span th:text="${user.locationId}">부산</span></p>-->
+<!--                    <p><strong>성별</strong> <span th:text="${user.gender}">여</span></p>-->
+<!--                    <p><strong>이메일</strong><span th:text="${user.email}"> doum@gmail.com</span></p>-->
+<!--                    <p> <strong>별점</strong> 4.3  <button style="background-color: #ddd; border: none;">리뷰 상세보기</button>-->
+<!--                    </p>-->
+<!--                </div>-->
+
+
+<!--                <div class="basic-info-long">-->
+<!--                    <p th:text="${user.introduction}"></p>-->
+<!--&lt;!&ndash;                    <p>안녕하세요! 저는 이영희입니다. 25세이고, 주로 서울 지역에서 봉사활동을 하고 있습니다.&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        저는 2018년부터 다양한 봉사활동에 참여해왔으며, 지금까지 100시간 이상의 봉사활동 경험을 쌓았습니다. 주로 지역사회 청소년 mentoring 프로그램과 환경 정화 활동에 참여했으며, 여러 차례 '우수 봉사자' 뱃지를 획득했습니다.&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        응급처치 자격증과 영어 능력을 보유하고 있으며, 봉사활동 중에는 이 기술들을 적극 활용하고 있습니다. 봉사활동을 통해 사람들에게 도움을 줄 수 있다는 것에 큰 보람을 느끼며, 앞으로도 더 많은 사람들에게 긍정적인 영향을 미치고 싶습니다.</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+
+<!--                &lt;!&ndash; <button class="btn_tistory">기관이 남긴 리뷰 보기</button> &ndash;&gt;-->
+
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--    <section>-->
+<!--        <h2>VOLUNTEER HISTORY</h2>-->
+<!--        <div class="contest-list">-->
+<!--            <div th:each="story:${stories}" class="contest-item"-->
+<!--                 th:data-title="${story.title}"-->
+<!--                 th:data-date="${#temporals.format(story.createdDate,'yyyy.MM.dd')}"-->
+<!--                 th:data-org="${story.content}"-->
+<!--                 data-img="../img/climateChange.jpg">-->
+<!--                <img src="https://dasoni.sogang.ac.kr/dataview/board/264/20190617_1147_2610003.jpg" alt="">-->
+<!--                <div class="contest-list-text">-->
+<!--                    <h3 th:text="${story.title}">[도서관 책 정리-수서도서관] 0211321</h3>-->
+<!--                    <p th:text="${#temporals.format(story.createdDate,'yyyy.MM.dd')}">2023.04.21</p>-->
+<!--                    <p th:text="${story.content}">수서도서관</p>-->
+<!--                </div>-->
+<!--         </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--</main>-->
+
+
+<!--&lt;!&ndash;            &ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://dasoni.sogang.ac.kr/dataview/board/264/20190617_1147_2610003.jpg" alt="Climate Change">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div  class="contest-list-text">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <h3>도서관 책 정리</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>2023.04.21</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>양천도서관</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://dasoni.sogang.ac.kr/dataview/board/264/20190617_1147_2610003.jpg" alt="Climate Change">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div  class="contest-list-text">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <h3>도서관 책 정리</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>2023.04.21</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>양천도서관</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://dasoni.sogang.ac.kr/dataview/board/264/20190617_1147_2610003.jpg" alt="Climate Change">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div  class="contest-list-text">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <h3>도서관 책 정리</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>2023.04.21</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>양천도서관</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://dasoni.sogang.ac.kr/dataview/board/264/20190617_1147_2610003.jpg" alt="Climate Change">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div  class="contest-list-text">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <h3>도서관 책 정리</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>2023.04.21</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>양천도서관</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://dasoni.sogang.ac.kr/dataview/board/264/20190617_1147_2610003.jpg" alt="Climate Change">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div  class="contest-list-text">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <h3>도서관 책 정리</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>2023.04.21</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>양천도서관</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="contest-item" data-title="정부24 영상 콘텐츠 공모전-수정" data-date="2023.04.21 ~ 2023.06.12" data-org="행정안전부" data-img="../img/climateChange.jpg">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://dasoni.sogang.ac.kr/dataview/board/264/20190617_1147_2610003.jpg" alt="Climate Change">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div  class="contest-list-text">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <h3>도서관 책 정리</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>2023.04.21</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>양천도서관</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+
+<!--            &lt;!&ndash; 게시글 더 추가할거면 여기서 더 추가  &ndash;&gt;-->
+
+
+
+<!--<footer>-->
+<!--    <img src="../img/도움로고.png" alt="">-->
+<!--    <p>Ministry of the Interior and Safety.All Rights reserved.</p>-->
+<!--</footer>-->
+
+
+
+
+
+<!--<script>-->
+
+
+<!--    document.addEventListener('DOMContentLoaded', function() {-->
+<!--        const modal = document.getElementById("modal");-->
+<!--        const modalImg = document.getElementById("modal-img");-->
+<!--        const modalTitle = document.getElementById("modal-title");-->
+<!--        const modalDate = document.getElementById("modal-date");-->
+<!--        const modalOrg = document.getElementById("modal-org");-->
+<!--        const closeBtn = document.getElementsByClassName("close")[0];-->
+<!--        const commentForm = document.getElementById("comment-form");-->
+
+<!--        const badgeModal = document.getElementById("badge-modal");-->
+<!--        const badgeModalImg = document.getElementById("badge-modal-img");-->
+<!--        const badgeModalTitle = document.getElementById("badge-modal-title");-->
+<!--        const badgeModalDescription = document.getElementById("badge-modal-description");-->
+<!--        const badgeCloseBtn = document.getElementsByClassName("badge-close")[0];-->
+
+
+<!--        document.querySelectorAll('.contest-item').forEach(item => {-->
+<!--            item.addEventListener('click', () => {-->
+<!--                modalImg.src = item.getAttribute('data-img');-->
+<!--                modalTitle.innerText = item.getAttribute('data-title');-->
+<!--                modalDate.innerText = item.getAttribute('data-date');-->
+<!--                modalOrg.innerText = item.getAttribute('data-org');-->
+<!--                modal.style.display = "block";-->
+<!--            });-->
+<!--        });-->
+
+<!--        document.querySelectorAll('.badges img').forEach(item => {-->
+<!--            item.addEventListener('click', () => {-->
+<!--                badgeModalImg.src = item.src;-->
+<!--                badgeModalTitle.innerText = item.getAttribute('data-title');-->
+<!--                badgeModalDescription.innerText = item.getAttribute('data-description');-->
+<!--                badgeModal.style.display = "block";-->
+<!--            });-->
+<!--        });-->
+
+
+
+
+<!--        closeBtn.onclick = function() {-->
+<!--            modal.style.display = "none";-->
+<!--        }-->
+<!--        badgeCloseBtn.onclick = function() {-->
+<!--            badgeModal.style.display = "none";-->
+<!--        }-->
+
+
+<!--        window.onclick = function(event) {-->
+<!--            if (event.target == modal) {-->
+<!--                modal.style.display = "none";-->
+<!--            }-->
+<!--            if (event.target == badgeModal) {-->
+<!--                badgeModal.style.display = "none";-->
+<!--            }-->
+<!--        }-->
+
+<!--        commentForm.addEventListener('submit', function(event) {-->
+<!--            event.preventDefault();-->
+<!--            const comment = document.getElementById("comment").value;-->
+<!--            alert("댓글이 추가되었습니다: " + comment);-->
+<!--            document.getElementById("comment").value = "";-->
+<!--        });-->
+<!--    });-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

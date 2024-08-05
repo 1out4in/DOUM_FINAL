@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.doum.mapper.won.WonUserJoinMapper">
+
+
+
+    <insert id="insertUser">
+        INSERT INTO TBL_USER (
+            USER_ID, EMAIL, PASSWORD, NAME, PHONE_NUMBER, BIRTH_DATE,
+            LOCATION_ID, ADDRESS_DETAIL, INTRODUCTION, REGISTER_DATE,
+            EMAIL_APPROVE, PHONE_APPROVE, PROFILE_PIC
+        )
+        VALUES (
+                   SEQ_USER.nextval,
+                   #{email},
+                   #{password},
+                   #{name},
+                   #{phoneNumber},
+                   #{birthDate},
+                   #{locationId},
+                   #{addressDetail},
+                   #{introduction},
+                   SYSDATE,
+                   #{emailApprove},
+                   #{phoneApprove},
+                   #{profilePic}
+               )
+    </insert>
+
+
+
+
+
+</mapper>

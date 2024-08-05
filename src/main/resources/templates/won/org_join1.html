@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기관회원가입  폼</title>
+    <link rel="stylesheet" th:href="@{/css/won/org_join1.css}">
+
+    <style>
+
+        ul.agree_article {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+  <h2>DOUM 아이디로 손쉬운 봉사활동!</h2>
+  <p>(기관인증 회원가입)</p>
+<!--    from 에 작성한 데이터를 어디로 보낼지 지정 -->
+  <form id="signupForm"  method="post" th:action="@{/Won/org_join1}" >
+      <div class="form-group">
+          <label for="username">아이디</label>
+          <input type="text" id="username" name="username" required placeholder="4~20자리 / 영문, 숫자, 특수문자 '_' 사용가능">
+<!--          <button type="button" onclick="checkUsername()">중복확인</button>-->
+          <span id="username-error" class="error-message"></span>
+      </div>
+
+      <div class="form-group">
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" name="password" required placeholder="8~16자리/영문 대소문자, 숫자, 특수문자 조합">
+    </div>
+    <div class="form-group">
+      <label for="password_confirm">비밀번호 확인</label>
+      <input type="password" id="password_confirm" name="password_confirm" required >
+    </div>
+    <div class="form-group">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" required placeholder="이름은 필수 입력 정보 입니다.">
+    </div>
+    <div class="form-group">
+      <label for="birthdate">생년월일</label>
+      <input type="date" id="birthdate" name="birthdate" required >
+    </div>
+    <div class="form-group">
+      <label for="phone">전화번호</label>
+      <input type="tel" id="phone" name="phone" required placeholder="- 를 빼고 입력해주세요.">
+    </div>
+
+    <div class="form-group">
+      <label for="address">주소</label>
+      <select name="address_select" id="address_select" class="Typo SizeL defalt" size="1">
+        <option value="">선택하세요</option>
+        <option value="서울특별시">서울특별시</option>
+        <option value="부산광역시">부산광역시</option>
+        <option value="대구광역시">대구광역시</option>
+        <option value="인천광역시">인천광역시</option>
+        <option value="광주광역시">광주광역시</option>
+        <option value="대전광역시">대전광역시</option>
+        <option value="울산광역시">울산광역시</option>
+        <option value="세종특별자치시">세종특별자치시</option>
+        <option value="경기도">경기도</option>
+        <option value="강원도">강원도</option>
+        <option value="충청북도">충청북도</option>
+        <option value="충청남도">충청남도</option>
+        <option value="전라북도">전라북도</option>
+        <option value="전라남도">전라남도</option>
+        <option value="경상북도">경상북도</option>
+        <option value="경상남도">경상남도</option>
+        <option value="제주특별자치도">제주특별자치도</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="address_detail">상세주소</label>
+      <input type="text" id="address_detail" name="address_detail" placeholder="자세히 입력해주세요.">
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">개인정보 수집에 동의합니다.</label>
+       <!-- 약관 -->
+       <div class="cont_division">
+        <span class="terms_agree"><strong>약관</strong></span>
+        <div class="agree_box">
+            <ul class="agree_article">
+                <li>
+                    <div class="InpBox">
+                        <span class="Chk SizeL">
+                        <input type="checkbox" class="check_mail" id="agreeAllPersonal">
+                        <label class="check_all check_off Lbl" for="agreeAllPersonal">
+                            <strong class="all_agree">전체 동의</strong>
+                        </label>
+                        <input type="hidden" name="hidden_check_all" value="0" id="hidden_check_all">
+                    </span>
+                    </div>
+                    <p class="agree_txt">위치기반 서비스 이용약관(선택), 개인정보 수집 동의(주소,생년월일) 동의를 포함합니다.</p>
+                </li>
+            </ul>
+            <ul class="agree_article depth2">
+                <li>
+                  
+                    <div class="agree_desc">
+                        <div class="InpBox">
+                            <span class="Chk">
+                            <input type="checkbox" id="agree_rule1">
+                            <label class="Lbl check_custom check_off" for="agree_rule1">
+                               <span><strong>(필수) 개인회원 약관에 동의</strong></span>
+                            </label>
+                        </span>
+
+                        </div>
+                    </div>
+                    <a href="/zf_user/help/terms-of-service/person" class="view_indetail" target="_blank">
+                        <span class="blind">개인회원 약관 상세보기</span>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <div class="agree_desc">
+                        <div class="InpBox">
+                            <span class="Chk">
+                            <input type="checkbox" id="agree_take1">
+                            <label class="Lbl check_custom check_off" for="agree_take1">
+                               <span><strong>(필수) 개인정보 수집 및 이용에 동의</strong></span>
+                            </label>
+                        </span>
+
+                        </div>
+
+
+
+
+
+                    </div>
+                    <a id="popupClausePrivacyPerson" href="/zf_user/popup/privacy-policy?category=person_privacy_req" class="view_indetail popup_clause_open" target="_blank">
+                        <span class="blind">개인정보 수집 및 이용에 동의 약관 상세보기</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="agree_desc">
+                        <div class="InpBox">
+                            <span class="Chk">
+                            <input type="checkbox" id="locationBased" name="locationBased" value="y">
+                            <label class="Lbl check_custom check_off" for="locationBased">
+                               <span>(선택) 위치기반서비스 이용약관에 동의</span>
+                            </label>
+                        </span>
+
+                        </div>
+                    </div>
+                    <a id="popupTermsAgreeLb" href="/zf_user/help/terms-of-service/location-based" class="view_indetail popup_clause_open" target="_blank">
+                        <span class="blind">위치기반서비스 이용약관에 동의 상세보기</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="agree_desc">
+                        <div class="InpBox">
+                            <span class="Chk">
+                            <input type="checkbox" class="check_mail" id="termsAgree" name="termsAgree" value="y">
+                            <label class="Lbl check_custom check_off" for="termsAgree">
+                               <span>(선택) 이메일 정보 수신 동의 - 이메일</span>
+                            </label>
+                        </span>
+                        </div>
+                    </div>
+                    <a id="popupEmailReceive" href="/zf_user/popup/privacy-policy?category=person_email_opt" class="view_indetail popup_clause_open" target="_blank">
+                        <span class="blind">이메일 정보 수신 동의 - 이메일 약관 상세보기</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="agree_desc">
+                        <div class="InpBox">
+                            <span class="Chk">
+                            <input type="checkbox" id="sms_receive_fl" name="sms_receive_fl" value="y">
+                            <label class="Lbl check_custom check_off" for="sms_receive_fl">
+                               <span>(선택) 봉사 정보 수신 동의 - SMS/MMS</span>
+                            </label>
+                        </span>
+
+                        </div>
+                    </div>
+                    <a id="popupSmsReceive" href="/zf_user/popup/privacy-policy?category=person_sms_opt" class="view_indetail popup_clause_open" target="_blank">
+                        <span class="blind">봉사 정보 수신 동의 - SMS/MMS 약관 상세보기</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+      
+    </div>
+    <button type="submit">가입하기</button>
+  </form>
+</div>
+
+
+
+</body>
+</html>
+<script>
+    function validateForm() {
+  var password = document.getElementById("password").value;
+  var password_confirm = document.getElementById("password_confirm").value;
+
+  if (password != password_confirm) {
+    alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+    return false;
+  }
+
+  var termsCheckbox = document.getElementById("terms");
+  if (!termsCheckbox.checked) {
+    alert("약관에 동의해야 가입할 수 있습니다.");
+    return false;
+  }
+
+
+
+  return true;
+}
+
+
+        function validateForm() {
+        var password = document.getElementById("password").value;
+        var password_confirm = document.getElementById("password_confirm").value;
+
+        if (password != password_confirm) {
+        alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+        return false;
+    }
+
+        var termsCheckbox = document.getElementById("terms");
+        if (!termsCheckbox.checked) {
+        alert("약관에 동의해야 가입할 수 있습니다.");
+        return false;
+    }
+
+        return true;
+
+
+
+    }
+//     전체동의
+
+        document.addEventListener("DOMContentLoaded", function () {
+        var agreeAllCheckbox = document.getElementById("agreeAllPersonal");
+        var otherCheckboxes = document.querySelectorAll(".agree_box input[type='checkbox']:not(#agreeAllPersonal)");
+
+        // 전체 동의 체크박스 클릭 시 동작
+        agreeAllCheckbox.addEventListener("change", function () {
+        var isChecked = agreeAllCheckbox.checked;
+        otherCheckboxes.forEach(function (checkbox) {
+        checkbox.checked = isChecked;
+    });
+    });
+
+        // 다른 체크박스 중 하나라도 체크 해제 시 전체 동의 체크박스도 해제
+        otherCheckboxes.forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+        if (!this.checked) {
+        agreeAllCheckbox.checked = false;
+    }
+    });
+    });
+    });
+
+
+
+
+
+
+
+// 아이디 중복검사 추가
+//
+//         function validateForm() {
+//         var password = document.getElementById("password").value;
+//         var password_confirm = document.getElementById("password_confirm").value;
+//
+//         if (password != password_confirm) {
+//         alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+//         return false;
+//     }
+//
+//         var termsCheckbox = document.getElementById("terms");
+//         if (!termsCheckbox.checked) {
+//         alert("약관에 동의해야 가입할 수 있습니다.");
+//         return false;
+//     }
+//
+//         return true;
+//     }
+//
+//         function checkUsername() {
+//         var username = document.getElementById("username").value;
+//         var usernameError = document.getElementById("username-error");
+//
+//
+//         var xhr = new XMLHttpRequest();
+//         xhr.open("POST", "/check-username", true);
+//         xhr.setRequestHeader("Content-Type", "application/json");
+//
+//         xhr.onreadystatechange = function () {
+//         if (xhr.readyState === XMLHttpRequest.DONE) {
+//         if (xhr.status === 200) {
+//         var response = JSON.parse(xhr.responseText);
+//         if (response.available) {
+//         usernameError.textContent = "사용할 수 있는 아이디입니다.";
+//         usernameError.style.color = "green";
+//     } else {
+//         usernameError.textContent = "이미 사용 중인 아이디입니다.";
+//         usernameError.style.color = "red";
+//     }
+//     } else {
+//         usernameError.textContent = "서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.";
+//         usernameError.style.color = "red";
+//     }
+//     }
+//     };
+//
+//         var data = JSON.stringify({ username: username });
+//         xhr.send(data);
+//     }
+//
+//
+//         function checkAllAgree(source) {
+//         var checkboxes = document.querySelectorAll('.agree_desc input[type="checkbox"]');
+//         checkboxes.forEach(function(checkbox) {
+//         checkbox.checked = source.checked;
+//     });
+//     }
+
+
+
+
+</script>

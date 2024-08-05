@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>story</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/lee/story(others).css}" />
+<!--    <link rel="stylesheet" th:href="@{/css/lee/detail.css}" />-->
+
+</head>
+<body>
+<div class="modal">
+    <div class="modal-content" >
+        <div class="modal-left">
+            <div class="slider">
+                <div class="slides">
+                    <div th:if="${storyImg != null}">
+                        <div th:each="image : ${storyImg}">
+                            <img th:src="@{${image.fileLocation}}" alt="게시물 이미지">
+                        </div>
+                    </div>
+                </div>
+
+<!--                    <img src="https://cdn.hankyung.com/photo/201905/20190513180013_5cd9321ddf1ec_1.jpg" alt="게시물 이미지">-->
+<!--                    <img src="https://cdn.hankyung.com/photo/201905/20190513180014_5cd9321ddf1ec_2.jpg" alt="게시물 이미지">-->
+<!--                    <img src="https://cdn.hankyung.com/photo/201905/20190513180015_5cd9321ddf1ec_3.jpg" alt="게시물 이미지">-->
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+        </div>
+        <div class="modal-right">
+
+
+            <div class="post-description">
+
+                <a style="color: black; font-weight: bold;" th:text="${story.title}" href=""></a>
+                <span style="color: #a4a1a1; font-size: x-small;" th:text="'조회수' + ${story.views}"></span>
+<!--                <p th:text="${story.content}"></p>-->
+                <input type="text" name="boardId" class="form-control"  th:value="${story.content}" readonly/>
+
+
+
+                <!--                <a style="color: black; font-weight: bold;" href="">[친환경체험교육 지구 그린데이] 기후위기와 지속가능한 사회</a>-->
+<!--                <span style="color: #a4a1a1; font-size: x-small;">조회수  150 </span>-->
+<!--                <p>제 경험 속에서 유기견 봉사활동은 정말 의미 있는 시간이었습니다. 처음으로 유기견 보호소를 방문했을 때부터 마음이 아프기도 했지만, 동시에 그들에게 제 손길을 전할 수 있는 기회가 너무나도 소중했습니다.-->
+
+<!--                    봉사활동을 하면서 가장 감동적이었던 순간은 바로 한 마리의 견과 친밀하게 지내면서였습니다. 그 강아지는 처음에는 겁이 많았지만, 시간이 지날수록 점점 더 따뜻해지는 모습을 보여줬습니다. 그 경험을 통해 동물에 대한 존중과 사랑의 중요성을 느꼈고, 이후 봉사활동에 대한 열정도 더욱 높아졌습니다.-->
+
+<!--                    유기견 봉사활동은 단순한 자원 봉사가 아니라, 동물과 함께하는 소중한 시간이었습니다. </p>-->
+            </div>
+
+            <div class="likes-section">
+                <p><i class="like-icon far fa-heart"></i> <strong>50</strong></p>
+            </div>
+<!--            <h3>댓글</h3>-->
+<!--            <div class="comments-section">-->
+<!--                <ul class="comments-list">-->
+<!--                    <li th:each="comment : ${comments}">-->
+<!--                        <div class="comment">-->
+<!--&lt;!&ndash;                            <img th:src="@{${comment.profileImage}}" alt="프로필 사진">&ndash;&gt;-->
+<!--                            <div class="comment-content">-->
+<!--                                <p><strong th:text="${comment.userId}"></strong> <span th:text="${comment.content}"></span></p>-->
+<!--                                <div class="comment-options">-->
+<!--                                    <i class="fas fa-ellipsis-v"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--               </div>-->
+
+<!--                    <li>-->
+<!--                        <div class="comment">-->
+<!--                            <img src="../img/girl.jpg" alt="프로필 사진">-->
+<!--                            <div class="comment-content">-->
+<!--                                <p><strong>ally</strong> 봉사기관이 어디인가요?</p>-->
+<!--                                <div class="comment-options">-->
+<!--                                    <i class="fas fa-ellipsis-v"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <div class="comment">-->
+<!--                            <img src="../img/girl.jpg" alt="프로필 사진">-->
+<!--                            <div class="comment-content">-->
+<!--                                <p><strong>ally</strong> 봉사기관이 어디인가요?</p>-->
+<!--                                <div class="comment-options">-->
+<!--                                    <i class="fas fa-ellipsis-v"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <div class="comment">-->
+<!--                            <img src="../img/girl.jpg" alt="프로필 사진">-->
+<!--                            <div class="comment-content">-->
+<!--                                <p><strong>ally</strong> 봉사기관이 어디인가요?</p>-->
+<!--                                <div class="comment-options">-->
+<!--                                    <i class="fas fa-ellipsis-v"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <div class="comment">-->
+<!--                            <img src="../img/girl-749113_640.jpg" alt="프로필 사진">-->
+<!--                            <div class="comment-content">-->
+<!--                                <p><strong>bella</strong> 매주 봉사 가는 것이 멋지네요!!</p>-->
+<!--                                <div class="comment-options">-->
+<!--                                    <i class="fas fa-ellipsis-v"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+<!--            <div class="comment-form">-->
+<!--                <textarea id="commentContent" placeholder="댓글을 입력하세요..."></textarea>-->
+<!--                <button type="button"  onclick="addStoryComment()" >댓글 달기</button>-->
+
+<!--            </div>-->
+<!--            <input type="hidden" name="userId" value="1">-->
+<!--            <input type="hidden" name="storyId" th:value="${story.storyId}">-->
+
+
+
+            <!-- Comments Section -->
+            <div class="comments-section mt-5">
+                <h3>댓글</h3>
+
+                <!--  로그인 되어 있을 때만 표시  -->
+<!--                <div sec:authorize="isAuthenticated()">-->
+                    <div class="comment-form mt-4 comments">
+                        <form id="commentForm" method="post">
+                            <div class="mb-3">
+                                <label for="commentContent" class="form-label">댓글 남기기</label>
+                                <textarea class="form-control" id="commentContent" rows="3"
+                                          placeholder="여기에 댓글을 입력하세요..."></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="addStoryComment()"
+                                    style="margin-bottom: 20px">댓글작성</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="comment-list mt-4">
+                    <!-- 댓글 목록을 동적으로 추가. -->
+                    <div class="comment-card">
+                        <div class="comment-body">
+                            <div class="comment-title">작성자 이름</div>
+                            <div class="comment-subtitle">2024년 8월 29일</div>
+                            <p class="comment-text">댓글 본문</p>
+                            <!-- 수정, 삭제 버튼 -->
+                            <div class="comment-actions">
+                                <button onclick="" class="btn btn-primary">수정</button>
+                                <button onclick="" class="btn btn-danger">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-card">
+                        <div class="comment-body">
+                            <div class="comment-title">작성자 이름</div>
+                            <div class="comment-subtitle">2024년 8월 29일</div>
+                            <p class="comment-text">댓글 본문</p>
+                            <!-- 수정, 삭제 버튼 -->
+                            <div class="comment-actions">
+                                <button onclick="" class="btn btn-primary">수정</button>
+                                <button onclick="" class="btn btn-danger">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="edit-delete-buttons">
+                <button onclick="editPost()">수정</button>
+                <button onclick="deletePost()">삭제</button>
+            </div>
+        </div>
+    </div>
+
+
+<div class="comment-options-modal" id="commentOptionsModal">
+    <div class="comment-options-content">
+        <button class="delete-button">삭제</button>
+        <button class="cancel-button">취소</button>
+    </div>
+</div>
+
+<div class="comment-options-modal" id="commentReportModal">
+    <div class="comment-options-content">
+        <button class="report-button">신고</button>
+        <button class="cancel-button">취소</button>
+    </div>
+</div>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script th:src="@{/js/lee/story.js}"></script>
+
+<script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        const slides = document.querySelectorAll('.slides img');
+        slides.forEach((slide, index) => {
+            slide.style.display = index === slideIndex ? 'block' : 'none';
+        });
+    }
+
+    function changeSlide(n) {
+        const slides = document.querySelectorAll('.slides img');
+        slideIndex = (slideIndex + n + slides.length) % slides.length;
+        showSlides();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlides();
+
+        // 댓글 옵션 버튼 이벤트
+        const optionButtons = document.querySelectorAll('.comment-options .fa-ellipsis-v');
+        const deleteModal = document.getElementById('commentOptionsModal');
+        const reportModal = document.getElementById('commentReportModal');
+        const deleteButton = document.querySelector('.delete-button');
+        const reportButton = document.querySelector('.report-button');
+        const cancelButtons = document.querySelectorAll('.cancel-button');
+
+        optionButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                if (index === optionButtons.length - 1) {
+                    reportModal.style.display = 'flex';
+                } else {
+                    deleteModal.style.display = 'flex';
+                }
+            });
+        });
+
+        cancelButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                deleteModal.style.display = 'none';
+                reportModal.style.display = 'none';
+            });
+        });
+
+        deleteButton.addEventListener('click', () => {
+            alert('댓글이 삭제되었습니다.');
+            deleteModal.style.display = 'none';
+        });
+
+        reportButton.addEventListener('click', () => {
+            alert('댓글이 신고되었습니다.');
+            reportModal.style.display = 'none';
+        });
+
+        // 모달 외부 클릭 시 닫기
+        window.addEventListener('click', (event) => {
+            if (event.target === deleteModal) {
+                deleteModal.style.display = 'none';
+            }
+            if (event.target === reportModal) {
+                reportModal.style.display = 'none';
+            }
+        });
+    });
+
+
+
+</script>
+
+</body>
+
+
+</html>

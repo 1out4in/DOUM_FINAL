@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>신청한 유저리스트</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/jung/user-list-applied.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="organization-search-header">
+        <h1>신청한 유저리스트</h1>
+        <hr />
+      </header>
+      <section class="search-section">
+        <form class="user-form">
+          <div class="form-group">
+            <label for="organization-name">유저명</label>
+            <input type="text" class="username-input" name="organization-name" />
+          </div>
+          <div class="form-buttons">
+            <button type="submit" class="search-btn">검색</button>
+            <button type="reset" class="reset-btn">초기화</button>
+          </div>
+        </form>
+      </section>
+      <section class="list-section">
+        <div class="list-header">
+          <h2><img src="https://www.1365.go.kr/web/vols/images/ico/ico_tit_lv2.png"/>목록보기</h2>
+        </div>
+        <hr />
+        <div class="list-wrap">
+          <ul class="list">
+            <li class="list-element">
+              <a href="#">
+                <div class="list-element-left">
+                  <div class="list-element-title">정인재</div>
+                  <div class="list-element-content">
+                    <span><b>[이메일]</b> email@email.com</span>
+                    <span><b>[핸드폰]</b> 010-1234-5678</span>
+                    <span><b>[나이]</b> 19</span>
+                    <span><b>[성별]</b> 남</span>
+                    <span><b>[자기소개]</b> 자개소개 자개소개</span>
+                  </div>
+                </div>
+              </a>
+              <div class="list-element-right" onclick="">
+                <button style="background-color: green;">수락</button>
+                <button style="background-color:#c0392b;">거절</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      </section>
+    </div>
+  </body>
+</html>

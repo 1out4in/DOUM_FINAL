@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기관 상세보기</title>
+    <link rel="stylesheet" href="agency-Detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <style>
+        .tab_content { display: none; }
+        .tab_content.active { display: block; }
+        .tab_list.active .tab_link span { font-weight: bold; }
+    </style>
+</head>
+<body>
+<!-- 임시 헤더 (위치잡기용) -->
+<header><h1>nav바</h1></header>
+
+<!-- 봉사글을 등록한 기관에서만 삭제 버튼이 보이게 수정이 필요할 것 같음.
+ 추후 추가 예정 -->
+
+<!-- 상세보기 틀 -->
+<div id="contentwrap">
+    <div id="contents"> <!-- side바를 만들지 말지 회의중이라 왼쪽에 빈곳이 있음 -->
+        <div class="content" id="content">
+            <div class="content_header">
+                <h2 class="top_title">봉사를 등록하는 기관 이름
+                    <span class="top_title_star" data-value="1">&#9733; 4.1</span>
+                    <button type="button" class="review_btn" id="btnList">
+                        <span>리뷰</span>
+                    </button>
+                </h2>
+            </div>
+
+            <!-- Modal -->
+            <div id="reviewModal" class="modal">
+                <div class="modal_content">
+                    <span class="close">&times;</span>
+                    <div class="modal_header">
+                        <h2>리뷰 목록</h2>
+                    </div>
+                    <div class="modal_body">
+                        <div class="review_item">
+                            <div class="star_rating" data-rating="5">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                            <div class="review_text">여기 시설도 깨끗하고 담당자분도 친절해서 좋았어요!</div>
+                            <div class="review_time">작성 시간: 11시</div>
+                        </div>
+                        <div class="review_item">
+                            <div class="star_rating" data-rating="4">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                            <div class="review_text">저만 그런지 모르겠지만, 봉사활동중에 물을 지급해준다고
+                                했는데 못받았어요..</div>
+                            <div class="review_time">작성 시간: 12시</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 등록글 제목 -->
+            <div class="content_view">
+                <div class="customer_center">
+                    <form method="post" name="#" id="#">
+                        <div class="board_view type2">
+                            <h3 class="top_title_header">봉사글 등록하는 기관</h3>
+
+                            <!-- 등록글 내역 -->
+                            <div class="board_data type2">
+                                <div class="group">
+                                    <dl>
+                                        <dt>담당자명</dt>
+                                        <dd>홍길동</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>담당자 연락처</dt>
+                                        <dd>010-1111-1111</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="group">
+                                    <dl>
+                                        <dt>대표자명</dt>
+                                        <dd>이순신</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>이메일</dt>
+                                        <dd>seaKing@naver.com</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="group">
+                                    <dl>
+                                        <dt>소속센터</dt>
+                                        <dd>기관이 소속한 지역</dd>
+                                    </dl>
+                                    <dl>
+                                        <!-- <dt>시설유형</dt>
+                                        <dd>공공시설</dd> -->
+                                    </dl>
+                                </div>
+
+                                <div class="group">
+                                    <dl>
+                                        <dt>전화번호</dt>
+                                        <dd>02-111-111</dd>
+                                    </dl>
+                                    <dl>
+                                        <!-- <dt>팩스번호</dt>
+                                        <dd>02-222-222</dd> -->
+                                    </dl>
+                                </div>
+
+
+                                <!-- <div class="group group_dl1">
+                                    <dl>
+                                        <dt>수용인원</dt>
+                                        <dd>00명</dd>
+                                    </dl>
+                                </div> -->
+
+                                <div class="group group_dl1">
+                                    <dl>
+                                        <dt class="location">주소</dt>
+                                        <dd> 대한민국 전국8도 어딘가
+                                            <!-- 지도 보기버튼은 지도API를 사용할 예정 -->
+                                            <a class="map_btn" href="https://www.google.co.kr/maps/place/%EB%A7%88%EB%B4%89%EC%96%91%EA%BC%AC%EC%B9%98+%EB%A7%A4%EB%B4%89%EC%A0%90/data=!4m6!3m5!1s0x357ca6b18b345a35:0xafa477c5cd27cce2!8m2!3d37.4853008!4d127.045664!16s%2Fg%2F11f3y1j0h6?hl=ko&entry=ttu" target="_blank">지도보기</a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 태그 -->
+                        <div class="tab_wrap type2">
+                            <ul class="tab">
+                                <li class="tab_list step1" onclick="showTab('recruiting')">
+                                    <a href="#" class="tab_link">
+                                        <span>모집중인 자원봉사</span>
+                                    </a>
+                                </li>
+                                <li class="tab_list step1" onclick="showTab('completed')">
+                                    <a href="#" class="tab_link">
+                                        <span>완료된 자원봉사</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 모집중인 자원봉사 목록 -->
+                        <div id="recruiting" class="tab_content active">
+                            <div class="border_header">
+                                <div class="list_search">
+                                    <p>
+                                        [전체
+                                        <em>3</em>
+                                        건, 현재페이지
+                                        <em>1</em>
+                                        /1]
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="border_list border_list2 non_sub">
+                                <ul class="list_wrap">
+                                    <li class="list list-element">
+                                            <a href="#">
+                                                <div class="list-element-left">
+                                                    <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                                                    <div class="list-element-content">
+                                                        <span class="time"><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                                                        <span class="time"><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="list-element">
+                                            <a href="#">
+                                                <div class="list-element-left">
+                                                    <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                                                    <div class="list-element-content">
+                                                        <span class="time"><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                                                        <span class="time"><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="list-element">
+                                            <a href="#">
+                                                <div class="list-element-left">
+                                                    <div class="list-element-title">[아름다운가게 인천간석점] *평일 오전 모집(**7월 3주차부터 신청가능/ 이전날짜 마감**)</div>
+                                                    <div class="list-element-content">
+                                                        <span class="time"><b>[모집기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                                                        <span class="time"><b>[봉사기간]</b> 2024-04-02 ~ 2024-07-02</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 완료된 자원봉사 목록 -->
+                        <div id="completed" class="tab_content">
+                            <div class="border_header">
+                                <div class="list_search">
+                                    <p>
+                                        [전체
+                                        <em>1</em>
+                                        건, 현재페이지
+                                        <em>1</em>
+                                        /1]
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="border_list border_list2 non_sub">
+                                <ul class="list_wrap">
+                                    <div class="list">
+                                        <li class="list-element">
+                                            <a href="#">
+                                                <div class="list-element-left">
+                                                    <div class="tag_g">
+                                                        <div class="close_Dday">
+                                                            <div class="tag">
+                                                                마감됨
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                        <div class="list-element-title">[완료된 봉사] *예시 제목 1*</div>
+                                                        <div class="list-element-content">
+                                                            <span class="time"><b>[모집기간]</b> 2024-01-02 ~ 2024-03-02</span>
+                                                            <span class="time"><b>[봉사기간]</b> 2024-01-02 ~ 2024-03-02</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!-- <li class="list-element">
+                                            <a href="#">
+                                                <div class="list-element-left">
+                                                    <div class="list-element-title">[완료된 봉사] *예시 제목 2*</div>
+                                                    <div class="list-element-content">
+                                                      <span class="time"><b>[모집기간]</b> 2024-01-10 ~ 2024-02-10</span>
+                                                      <span class="time"><b>[봉사기간]</b> 2024-01-10 ~ 2024-02-10</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="list-element">
+                                            <a href="#">
+                                                <div class="list-element-left">
+                                                    <div class="list-element-title">[완료된 봉사] *예시 제목 3*</div>
+                                                    <div class="list-element-content">
+                                                      <span class="time"><b>[모집기간]</b> 2024-01-15 ~ 2024-02-15</span>
+                                                      <span class="time"><b>[봉사기간]</b> 2024-01-15 ~ 2024-02-15</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li> -->
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 목록글이 많을경우 띄워줄 페이지수 버튼-->
+                        <div class="border_bot">
+                            <div class="paging">
+                                <div class="pageArea">
+                                    <div class="pagenation">
+                                        <strong class="pageNum">
+                                            <span class="haja">현재페이지</span>
+                                            1
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 목록으로 돌아가는 버튼 -->
+                        <div class="border_bot">
+                            <div class="btn_sec btn_sec_center">
+                                <button type="button" class="btn_submit">
+                                    <span>목록</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab content
+            const tabContents = document.querySelectorAll('.tab_content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Show the selected tab content
+            const activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab_list');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Add active class to the selected tab
+            const selectedTab = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+            selectedTab.classList.add('active');
+        }
+
+        // Initialize the first tab as active
+        showTab('recruiting');
+
+        // 모달 열기 및 닫기
+        document.getElementById('btnList').onclick = function() {
+            document.getElementById('reviewModal').style.display = "block";
+        };
+
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('reviewModal').style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('reviewModal')) {
+                document.getElementById('reviewModal').style.display = "none";
+            }
+        };
+
+        // 별점 표시
+        document.querySelectorAll('.review_item').forEach(item => {
+            const rating = item.querySelector('.star_rating').getAttribute('data-rating');
+            const stars = item.querySelectorAll('.star');
+            for (let i = 0; i < rating; i++) {
+                stars[i].classList.add('selected');
+            }
+        });
+    </script>
+</body>
+</html>

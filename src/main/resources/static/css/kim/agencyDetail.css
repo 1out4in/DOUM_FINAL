@@ -1,0 +1,581 @@
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1225px;
+    min-width: 1000px;
+}
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    color: #666;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+/* 상세보기 큰틀 */
+#contents{
+    width: 850px;
+    min-height: 1080px;
+    margin: 0 auto;
+}
+
+.content{
+    position: relative;
+    float: right;
+    width: 845px;
+    padding: 30px 0 60px 0px;
+}
+
+/* ---------------------------------- */
+
+/* 봉사글 등록하는 기관 이름 */
+.content_header {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.content_header h2 {
+    padding-bottom: 17px;
+    border-bottom: 1px solid #ccc;
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: -0.060em;
+}
+
+.top_title {
+    display: flex;
+    margin: 0;
+    line-height: 100%;
+}
+
+.top_title span{
+    font-size: 22px;
+}
+
+.review_btn {
+    margin-left: auto;
+}
+
+.review_btn span {
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 35px;
+    color: #fff;
+    background: #f36200;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.review_border {
+    position: relative;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal_content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),
+    0 6px 6px rgba(0,0,0,0.23);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal_header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.modal_body {
+    padding-top: 10px;
+}
+
+.star_rating {
+    justify-content: center;
+    font-size: 25px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star.selected {
+    color: #f36200;
+}
+
+.review_item {
+    margin-bottom: 20px;
+}
+
+.review_text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.review_time {
+    margin-top: 10px;
+    color: #999;
+    font-size: 12px;
+}
+
+/* ---------------------------------- */
+
+/* 기관이름 */
+.content_view{
+    position: relative;
+}
+
+.board_view{
+    border-top: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.board_view .top_title_header{
+    padding: 10px;
+    color: #000;
+    border-bottom: 1px solid #333;
+    background: #eee;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.top_title_header{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------- */
+
+/* 기관 상세글 */
+
+.board_data.type2 .group {
+    /* padding: 8px 0; */
+    overflow: hidden;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.board_data{
+    border-top: 2px solid #000;
+}
+
+.board_data.type2 .group dl {
+    position: relative;
+    width: 50%;
+    margin-right: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+.board_data dl:first-child {
+    margin-left: 0;
+    padding-left: 0;
+}
+.board_data dl {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.board_data.type2 .group dl dt {
+    /* position: absolute; */
+    float: left;
+    width: 115px;
+    padding: 8px 0;
+    line-height: 22px;
+    top: 0;
+    left: 0;
+    /* margin-left: -1px; */
+    border-right: 1px solid #ccc;
+    background: #eee;
+    color: #333;
+    text-align: center;
+}
+
+.board_data dl dt {
+    float: left;
+    padding-right: 5px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.board_data.type2 .group dl dd {
+    position: relative;
+    float: left;
+    width: 280px;
+    margin-left: -1px;
+    padding: 8px 10px;
+    /* padding-right: 0; */
+    font-weight: normal;
+    line-height: 22px;
+    color: #666;
+    min-height: 22px;
+    border-left: 1px solid #ccc;
+    /* border-right: 1px solid #ccc; */
+}
+
+.board_data dl dd {
+    float: left;
+    font-weight: 400;
+    color: #666;
+    font-size: 14px;
+    letter-spacing: -0.025em;
+}
+
+.board_data.type2 .group.group_dl1 dl {
+    width: 100%;
+}
+
+.board_data.type2 .group dl dd a.map_btn {
+    background: #666;
+    color: #fff;
+    border: 2px solid white;
+}
+
+
+.board_data.type2 .group dl dd a.map_btn {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+    padding: 0px 0px;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.location{
+    height: 26px;
+}
+
+/* ---------------------------------- */
+
+/* 모집,완료된 봉사 목록 */
+.tab_wrap ul.tab {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.tab_wrap.type2 ul.tab .tab_list {
+    width: 50%;
+}
+.tab_wrap ul.tab .tab_list {
+    float: left;
+}
+
+.tab_wrap ul.tab .tab_link {
+    /* display: block; */
+    display: block;
+    position: relative;
+    padding: 0;
+    font-size: 15px;
+
+    color: #666;
+    border: 1px solid #ccc;;
+    background: #fff;
+    text-align: center;
+}
+
+.tab_wrap ul.tab .tab_list .tab_link{
+    padding: 10px 0 11px;
+}
+
+.tab_wrap ul.tab .tab_list .tab_link:hover{
+    border-top: 1px solid #ff4e00;
+    color: #ff4e00;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ---------------------------------- */
+
+/* 지금까지 작성한 봉사목록의 총 갯수를 알려주는 틀 */
+
+.list_search{
+    position: relative;
+    padding: 0 0 10px;
+}
+
+.list_search p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+p{
+    margin: 0;
+}
+
+.list_search p em{
+    font-weight: 500;
+    color: #ff4e00;
+    font-style: normal;
+}
+
+/* ---------------------------------- */
+
+/* 작성한 봉사글 목록 틀 */
+
+.border_list {
+    position: relative;
+}
+
+.border_list .border_list2 .non_sub {
+    margin: 0;
+    padding: 0;
+}
+
+.border_list .list_wrap {
+    width: 100%;
+    overflow: hidden;
+    border-top: 2px solid #000;
+}
+
+.border_list .list_wrap > li {
+    position: relative;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.list {
+    padding: 5px 5px;
+    margin: 0 2px;
+}
+
+.list-element-content span {
+    font-size: 12px;
+    margin-right: 4px;
+    color: #666666;
+}
+
+.list-element {
+    min-height: 80px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.list-element-header{
+    font-size: 14px;
+    font-weight: 700;
+    color: chocolate;
+}
+
+.list-element-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 5px;
+}
+
+.list-element-content span {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.list-element-content{
+    padding: 5px 0 8px 0;
+}
+
+.num{
+    padding-bottom: 5px;
+}
+
+/* ----------------------------------- */
+
+/* 마감 일자 박스 */
+
+.border_list div.close_Dday{
+    position: absolute;
+    right: 10px;
+}
+
+.border_list div.close_Dday .tag{
+    width: 58px;
+    padding: 15px 0;
+    border: 2px solid #666;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.border_list div.close_Dday .tag span{
+    color: #ff4e00;
+    font-size: 16px;
+}
+
+.border_list div.close_Dday .num{
+    font-size: 15px;
+    text-align: center;
+    width: 88px;
+}
+
+.border_list div.close_Dday .num span{
+    color: #ff4e00;
+}
+
+
+/* 페이지 버튼과 목록 버튼 */
+
+.border_bot{
+    position: relative;
+    margin-top: 25px;
+}
+
+.pagenation{
+    text-align: center;
+}
+
+.pagenation strong.pageNum{
+    border-color: #7a7a7a;
+    color: #fff;
+    background-color: #7a7a7a;
+    display: inline-block;
+    min-width: 34px;
+    height: 34px;
+    font-weight: normal;
+    line-height: 34px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #ccc;
+}
+
+.haja{
+    position: absolute;
+    top: -9999px;
+}
+
+/* 목록 */
+.btn_sec.btn_sec_center {
+    text-align: center;
+}
+
+/* 이부분은 백앤드 할때 필요할거 같아서 안지움 */
+input[type='submit'], input[type='button'], button, button span {
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+    vertical-align: top;
+}
+button {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 0 none;
+    background: none;
+}
+
+.btn_submit span {
+    display: inline-block;
+    height: 40px;
+    padding: 0 33px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 40px;
+    /* border: 1px solid #ccc; */
+    color: #fff;
+    background: #f36200;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 기본 리스트들 css값 */
+
+ul, ol, dl {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    list-style: none;
+}
+
+dt, dd, li {
+    margin: 0;
+    padding: 0;
+    /* line-height: 22px; */
+}
